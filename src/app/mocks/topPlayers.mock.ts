@@ -52,8 +52,8 @@ export const topPlayersMock: Player[] = [
         pictureUrl: "assets/dembele-picture.webp",
         birthDay: new Date('23/08/1995'),
         position: 'Striker',
-        goals: 18,
-        assists: 8,
-        mark: 7.83
+        goals: 16,
+        assists: 10,
+        mark: 7.49
     },
 ]
