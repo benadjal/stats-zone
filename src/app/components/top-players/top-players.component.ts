@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { PlayersService } from '../../services/players.service';
+import { Observable } from 'rxjs';
+import { Player } from '../../models/player.model';
+import { AsyncPipe } from '@angular/common';
+import { PlayerCardComponent } from '../player-card/player-card.component';
 
 @Component({
   selector: 'app-top-players',
   standalone: true,
-  imports: [],
+  imports: [AsyncPipe, PlayerCardComponent],
   templateUrl: './top-players.component.html',
   styleUrl: './top-players.component.scss'
 })
 export class TopPlayersComponent {
+
+  playerService = inject(PlayersService);
+
+  topPlayers$ : Observable<Player[]> = this.playerService.getTopPlayers();
 
 }

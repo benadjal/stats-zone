@@ -4,3 +4,15 @@ h2 {
     font-size: 27px;
     margin-bottom: 0;
 }
+
+p {
+    color: aliceblue;
+}
+
+.list-top-players {
+    display: flex;
+    flex-direction: row;
+    // background-color: #00ff00;
+    justify-content: space-around;
+
+}
