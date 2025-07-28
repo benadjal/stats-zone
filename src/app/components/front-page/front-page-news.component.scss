@@ -1,0 +1,44 @@
+h2 {
+    color: white;
+    font-family: 'Orbitron';
+    font-size: 27px;
+    margin-bottom: 0;
+    margin-top: 2%;
+}
+
+.material-icons {
+    color: #00FF57;
+    font-size:35px;
+}
+
+p {
+    color: white;
+    font-family: 'Orbitron';
+    font-size: 20px;
+}
+
+.list-news{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2%;
+}
+
+.news-block {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    border: 1px solid #00FF57;
+    width: 400px;
+    height: 120px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-block:hover {
+    transform: scale(1.10);
+    background-color: #003b14;
+    box-shadow: 0 30px 40px rgba(0, 255, 87, 0.3);
+    cursor: pointer;
+    color: white;
+}
