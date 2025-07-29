@@ -1,7 +1,31 @@
 <div class="search-container">
-  <input
-    [ngStyle]="{'border-color': color}"
-    type="text"
-    placeholder="Recherchez un joueur"
-  />
+  <input [ngStyle]="{'border-color': color}" type="text" placeholder="Recherchez un joueur" />
+
+
+  @if(filtredPlayers.length > 0) {
+  <div class="search-results">
+    @for (player of filtredPlayers; track player.id ){
+
+    <div class="result-item">
+      <div class="result-item-picture">
+        <img [src]="player.pictureUrl">
+      </div>
+
+
+      <div class="result-item-detail">
+        <div class="result-item-name">
+          <p>{{ player.name }} {{player.lastName}}</p>
+        </div>
+        <div class="result-item-team">
+          <p>{{player.team}}</p>
+        </div>
+      </div>
+
+
+    </div>
+    }
+
+  </div>
+  }
+
 </div>

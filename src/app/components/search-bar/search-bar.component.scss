@@ -1,5 +1,5 @@
 .search-container {
-  // position: relative;
+  position: relative;
   width: 500px;
   height: 30px;
   margin-bottom: 4%;
@@ -14,25 +14,57 @@ input[type="text"] {
   color: white;
   font-family: 'Orbitron', sans-serif;
   font-size: medium;
-  border: 1px solid;  
+  border: 1px solid;
+  margin-bottom: 1%;
 }
 
-// ul {
-//   position: absolute;
-//   width: 100%;
-//   background-color: #222;
-//   border: 1px solid #00ff00;
-//   border-top: none;
-//   max-height: 200px;
-//   overflow-y: auto;
-//   z-index: 10;
-// }
+.search-results {
+  position: absolute;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #222;
+  border: 1px solid #00ff00;
+  color: white;
+  padding: 10px 15px;
+  z-index: 10;
+}
 
-// li {
-//   padding: 10px;
-//   cursor: pointer;
-// }
+.result-item {
+  padding: 5px 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+}
 
-// li:hover {
-//   background-color: #333;
-// }
+.result-item:hover {
+  background-color: #333;
+}
+
+.result-item-picture {
+  flex: 1;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 55%;
+    border-radius: 50%;
+  }
+}
+
+.result-item-detail {
+  flex: 4;
+}
+
+.result-item-name {
+  color: white;
+  font-family: 'Orbitron';
+  font-size: 80%;
+  // background-color: aliceblue;
+}
+
+.result-item-team {
+  color: white;
+  font-family: 'Orbitron';
+  font-size: 65%;
+
+}
