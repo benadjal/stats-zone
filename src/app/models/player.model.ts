@@ -7,5 +7,7 @@ export interface Player {
     position : string,
     goals : number,
     assists : number,
-    mark : number
+    mark : number,
+    team : string,
+    country : string
 }

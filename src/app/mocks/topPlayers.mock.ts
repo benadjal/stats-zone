@@ -10,7 +10,9 @@ export const topPlayersMock: Player[] = [
         position: 'Striker',
         goals: 19,
         assists: 7,
-        mark: 7.99
+        mark: 7.99,
+        team: "FC Barcelone",
+        country: "Espagne"
     },
     {
         id: 2,
@@ -21,7 +23,10 @@ export const topPlayersMock: Player[] = [
         position: 'Striker',
         goals: 12,
         assists: 9,
-        mark: 7.66
+        mark: 7.66,
+        team: "Al Ahli",
+        country: "Algérie"
+
     },
     {
         id: 3,
@@ -32,7 +37,10 @@ export const topPlayersMock: Player[] = [
         position: 'Striker',
         goals: 22,
         assists: 5,
-        mark: 7.77
+        mark: 7.77,
+        team: "Real Madrid FC",
+        country: "France"
+
     },
     {
         id: 4,
@@ -43,7 +51,10 @@ export const topPlayersMock: Player[] = [
         position: 'Striker',
         goals: 18,
         assists: 8,
-        mark: 7.83
+        mark: 7.83,
+        team: "Manchester City",
+        country: "Norvège"
+
     },
     {
         id: 5,
@@ -54,6 +65,9 @@ export const topPlayersMock: Player[] = [
         position: 'Striker',
         goals: 16,
         assists: 10,
-        mark: 7.49
+        mark: 7.49,
+        team: "Paris Saint Germain",
+        country: "France"
+
     },
 ]
