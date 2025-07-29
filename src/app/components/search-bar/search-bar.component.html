@@ -1,10 +1,14 @@
 <div class="search-container">
-  <input [ngStyle]="{'border-color': color}" type="text" placeholder="Recherchez un joueur" />
+  <form [formGroup]="searchForm">
+    <input [ngStyle]="{'border-color': color}" type="text" placeholder="Recherchez un joueur"
+      formControlName="search" />
+  </form>
 
 
-  @if(filtredPlayers.length > 0) {
+  @if(filtredPlayers$ | async; as filtredPlayers){
+  @if(filtredPlayers.length > 0){
   <div class="search-results">
-    @for (player of filtredPlayers; track player.id ){
+    @for(player of filtredPlayers; track player.id ){
 
     <div class="result-item">
       <div class="result-item-picture">
@@ -27,5 +31,8 @@
 
   </div>
   }
+
+  }
+
 
 </div>
