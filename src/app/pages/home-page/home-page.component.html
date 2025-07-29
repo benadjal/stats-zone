@@ -5,14 +5,18 @@
 
 <main>
   <section aria-label="Barre de recherche des joueurs">
-    <app-search-bar></app-search-bar>
+    <app-search-bar [coloredBorder]="true"></app-search-bar>
   </section>
 
   <section aria-label="Top joueurs">
     <app-top-players></app-top-players>
   </section>
 
-  <section aria-label="informations à la une">
+  <section aria-label="Informations à la une">
     <app-front-page></app-front-page>
+  </section>
+
+  <section aria-label="Comparer les statistiques">
+    <app-compare-stats></app-compare-stats>
   </section>
 </main>
