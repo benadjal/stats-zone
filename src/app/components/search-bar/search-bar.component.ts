@@ -10,7 +10,6 @@ import { Component, Input } from '@angular/core';
 })
 export class SearchBarComponent {
 
-  // @Input() coloredBorder : boolean = false;
   @Input() color : string = 'grey'
 
 }
