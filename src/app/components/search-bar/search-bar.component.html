@@ -8,9 +8,9 @@
   @if(filtredPlayers$ | async; as filtredPlayers){
   @if(filtredPlayers.length > 0){
   <div class="search-results">
-    @for(player of filtredPlayers; track player.id ){
+    @for(player of filtredPlayers; track player.id){
 
-    <div class="result-item">
+    <div class="result-item" (click)="selectPlayer(player)">
       <div class="result-item-picture">
         <img [src]="player.pictureUrl">
       </div>

@@ -47,6 +47,47 @@ hr {
     border: 1px solid grey
 }
 
-p {
-    color: #00FF57;
+.result-item {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+
+}
+
+.result-item:hover {
+  background-color: #333;
+}
+
+.result-item-picture {
+  flex: 1;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 55%;
+    border-radius: 50%;
+  }
+}
+
+.result-item-detail {
+  flex: 4;
+}
+
+.result-item-name {
+  color: white;
+  font-family: 'Orbitron';
+  font-size: 80%;
+}
+
+.result-item-team {
+  color: white;
+  font-family: 'Orbitron';
+  font-size: 65%;
+
+}
+
+.compare-btn {
+  margin-top: 1%;
 }

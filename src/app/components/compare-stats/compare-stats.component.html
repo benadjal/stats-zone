@@ -1,8 +1,50 @@
 <h2>Comparer les statistiques</h2>
 
 <div class="compare-stats-container">
-    <app-search-bar class="search-bar-player"></app-search-bar>
+    @if(!isPlayerOneSelected) {
+    <app-search-bar class="search-bar-player" [mode]="'comparePlayerOne'"
+        (playerSelected)="selectPlayer($event)"></app-search-bar>
+    } @else {
+    <div class="result-item">
+        <div class="result-item-picture">
+            <img [src]="playerOne.pictureUrl">
+        </div>
+
+
+        <div class="result-item-detail">
+            <div class="result-item-name">
+                <p>{{ playerOne.name }} {{playerOne.lastName}}</p>
+            </div>
+            <div class="result-item-team">
+                <p>{{playerOne.team}}</p>
+            </div>
+        </div>
+
+
+    </div>
+    }
     <hr>
-    <app-search-bar class="search-bar-player"></app-search-bar>
+    @if(!isPlayerTwoSelected){
+    <app-search-bar class="search-bar-player" [mode]="'comparePlayerTwo'"
+        (playerSelected)="selectPlayer($event)"></app-search-bar>
+    }@else {
+    <div class="result-item">
+        <div class="result-item-picture">
+            <img [src]="playerTwo.pictureUrl">
+        </div>
+
+
+        <div class="result-item-detail">
+            <div class="result-item-name">
+                <p>{{ playerTwo.name }} {{playerTwo.lastName}}</p>
+            </div>
+            <div class="result-item-team">
+                <p>{{playerTwo.team}}</p>
+            </div>
+        </div>
+
+
+    </div>
+    }
     <button class="compare-btn">Comparer</button>
 </div>
