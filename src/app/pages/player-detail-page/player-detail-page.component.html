@@ -1,1 +1,3 @@
-<p>player-detail-page works!</p>
+@if(player$ | async; as player){
+    <p>{{player.name}}</p>
+}
