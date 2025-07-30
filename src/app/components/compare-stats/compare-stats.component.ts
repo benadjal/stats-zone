@@ -27,4 +27,8 @@ export class CompareStatsComponent {
     }
   }
 
+  unSelectPlayer(firstOrSecondPlayer : 'playerOne' | 'playerTwo'){
+    firstOrSecondPlayer === 'playerOne' ? this.isPlayerOneSelected = false : this.isPlayerTwoSelected = false
+  }
+
 }
