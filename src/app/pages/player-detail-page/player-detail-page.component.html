@@ -1,3 +1,27 @@
-@if(player$ | async; as player){
-    <p>{{player.name}}</p>
+@if(player$ | async; as player) {
+  <div class="search-bar">
+    <app-search-bar [color]="'#00FF57'"></app-search-bar>
+  </div>
+
+  <div class="player-detail-container">
+    <div class="player-essential-informations">
+      <div class="player-picture">
+        <img [src]="player.pictureUrl" [alt]="player.name + ' ' + player.lastName" />
+      </div>
+
+      <div class="player-name-team-contrat">
+        <span class="text text-xl text-bold">{{ player.name }} {{ player.lastName }}</span>
+        <span class="text text-lg">{{ player.position }}</span>
+        <span class="text text-xl">{{ player.team }}</span>
+        <span class="text text-lg text-muted">
+          Contrat jusqu'au : {{ player.contractEndDate | date: 'dd MMMM, yyyy' }}
+        </span>
+      </div>
+    </div>
+
+    <div class="player-market-value">
+      <span class="text text-bold text-xl">Valeur marchande</span>
+      <span class="text text-value">215M €</span>
+    </div>
+  </div>
 }
