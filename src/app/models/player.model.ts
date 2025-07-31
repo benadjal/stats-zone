@@ -10,5 +10,10 @@ export interface Player {
     mark : number,
     team : string,
     country : string;
-    contractEndDate : Date
+    contractEndDate : Date,
+    age : number,
+    size : number,
+    bestFoot : string,
+    shirtNumber : number,
+    marketValue : number
 }

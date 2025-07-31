@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Player } from '../models/player.model';
 import { topPlayersMock } from '../mocks/topPlayers.mock';
+import { allPlayers } from '../mocks/allPlayers.mock';
 
 
 @Injectable({
@@ -17,7 +18,7 @@ export class PlayersService {
 
   getFilteredPlayers(search: string): Observable<Player[]> {
     const normalizedSearch = search.toLocaleLowerCase()
-    let matchingPlayers = topPlayersMock.filter((player) => this.matchesNameOrLastName(player, normalizedSearch));
+    let matchingPlayers = allPlayers.filter((player) => this.matchesNameOrLastName(player, normalizedSearch));
     return of(matchingPlayers);
   }
 
@@ -27,7 +28,7 @@ export class PlayersService {
   }
 
   getPlayerById(id : number) : Observable<Player> {
-    const matchingPlayer = topPlayersMock.find((player : Player) => player.id === id);
+    const matchingPlayer = allPlayers.find((player : Player) => player.id === id);
     if (!matchingPlayer) {
       throw new Error(`Player with id ${id} not found`);
     }
