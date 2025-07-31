@@ -9,5 +9,6 @@ export interface Player {
     assists : number,
     mark : number,
     team : string,
-    country : string
+    country : string;
+    contractEndDate : Date
 }

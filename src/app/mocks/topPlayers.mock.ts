@@ -12,7 +12,8 @@ export const topPlayersMock: Player[] = [
         assists: 7,
         mark: 7.99,
         team: "FC Barcelone",
-        country: "Espagne"
+        country: "Espagne",
+        contractEndDate: new Date('2029-04-17')
     },
     {
         id: 2,
@@ -25,7 +26,8 @@ export const topPlayersMock: Player[] = [
         assists: 9,
         mark: 7.66,
         team: "Al Ahli",
-        country: "Algérie"
+        country: "Algérie", 
+        contractEndDate: new Date('2028-06-30')
 
     },
     {
@@ -39,7 +41,8 @@ export const topPlayersMock: Player[] = [
         assists: 5,
         mark: 7.77,
         team: "Real Madrid FC",
-        country: "France"
+        country: "France",
+        contractEndDate: new Date('2026-05-19')
 
     },
     {
@@ -53,7 +56,8 @@ export const topPlayersMock: Player[] = [
         assists: 8,
         mark: 7.83,
         team: "Manchester City",
-        country: "Norvège"
+        country: "Norvège",
+        contractEndDate: new Date('2029-06-30')
 
     },
     {
@@ -67,7 +71,8 @@ export const topPlayersMock: Player[] = [
         assists: 10,
         mark: 7.49,
         team: "Paris Saint Germain",
-        country: "France"
+        country: "France",
+        contractEndDate: new Date('2027-01-30')
 
     },
 ]
