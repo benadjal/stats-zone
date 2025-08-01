@@ -1,3 +1,5 @@
+import { PlayerStats } from "./player-stats.model";
+
 export interface Player {
     id : number,
     name : string,
@@ -16,4 +18,5 @@ export interface Player {
     bestFoot : string,
     shirtNumber : number,
     marketValue : number
+    stats?: PlayerStats
 }
