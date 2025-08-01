@@ -62,7 +62,7 @@
 .attributs-and-national-stats {
     display: flex;
     justify-content: center;
-    margin-top: 2%;
+    margin: 2% 0 2% 0;
     gap: 20px
 }
 
@@ -94,17 +94,49 @@
     }
 }
 
+.detailed-stats {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // background-color: #00FF57;
+}
+
 .national-team-apperances-and-goals {
     display: flex;
     justify-content: space-between;
     width: 60%;
 }
 
-.national-team-appearances, .national-team-goals {
+.national-team-appearances,
+.national-team-goals {
     width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.season-heat-map,
+.games,
+.attack,
+.defense,
+.passes {
+    width: 80%;
+    p {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.season-heat-map {
+    img {
+        width: 30%;
+        margin: auto;
+        margin-bottom: 2%;
+        margin-top: 2%;
+    }
 }
 
 

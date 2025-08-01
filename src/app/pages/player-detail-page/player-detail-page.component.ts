@@ -5,11 +5,12 @@ import { Observable, switchMap } from 'rxjs';
 import { Player } from '../../models/player.model';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
+import { DropDownComponent } from '../../components/drop-down/drop-down.component';
 
 @Component({
   selector: 'app-player-detail-page',
   standalone: true,
-  imports: [AsyncPipe,SearchBarComponent, DatePipe],
+  imports: [AsyncPipe,SearchBarComponent, DatePipe, DropDownComponent],
   templateUrl: './player-detail-page.component.html',
   styleUrl: './player-detail-page.component.scss'
 })
