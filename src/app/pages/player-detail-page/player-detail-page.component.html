@@ -65,20 +65,20 @@
         <div class="national-team">
             <img src="assets/flag.png">
             <div class="national-team-name-and-start">
-                <p class="text text-xl">Espagne</p>
-                <p class="text text-lg text-muted">Début : 8 Septembre 2023</p>
+                <p class="text text-xl">{{player.country}}</p>
+                <p class="text text-lg text-muted">Début le : {{player.stats?.nationalTeamStats?.firstApperences | date : 'dd MMMM, yyyy'}}</p>
             </div>
         </div>
 
         <div class="national-team-apperances-and-goals">
             <div class="national-team-appearances">
                 <p class="text text-xl">Apparitions</p>
-                <p class="text text-value">21</p>
+                <p class="text text-value">{{player.stats?.nationalTeamStats?.apperences}}</p>
             </div>
 
             <div class="national-team-goals">
                 <p class="text text-xl">Buts</p>
-                <p class="text text-value">6</p>
+                <p class="text text-value">{{player.stats?.nationalTeamStats?.goals}}</p>
             </div> 
         </div>
     </div>

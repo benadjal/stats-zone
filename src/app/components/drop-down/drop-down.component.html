@@ -2,15 +2,13 @@
   <div class="dropdown-header" (click)="toggleDropdown()">
     <p>{{title}}</p>
 
-    <!-- <span >▲</span> -->
-
     @if(!isOpen) {
     <i class="material-icons">keyboard_arrow_down</i>
     } @else {
     <i class="material-icons">keyboard_arrow_up</i>
 
     }
-
+ 
   </div>
 
   <div class="dropdown-content" [class.open]="!isOpen">

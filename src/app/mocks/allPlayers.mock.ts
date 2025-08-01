@@ -69,6 +69,11 @@ export const allPlayers: Player[] = [
         errorsLeadingToGoal: 0,
         penaltiesCommitted: 0,
       },
+      nationalTeamStats: {
+        firstApperences: new Date('2021-02-10'),
+        apperences: 10,
+        goals: 3
+      }
     },
   },
   {
@@ -139,6 +144,11 @@ export const allPlayers: Player[] = [
         errorsLeadingToGoal: 0,
         penaltiesCommitted: 0,
       },
+      nationalTeamStats: {
+        firstApperences: new Date('2019-02-11'),
+        apperences: 11,
+        goals: 1
+      }
     },
   },
   {
@@ -209,6 +219,11 @@ export const allPlayers: Player[] = [
         errorsLeadingToGoal: 0,
         penaltiesCommitted: 0,
       },
+      nationalTeamStats: {
+        firstApperences: new Date('2016-01-11'),
+        apperences: 25,
+        goals: 12
+      }
     },
   },
   {
@@ -279,6 +294,11 @@ export const allPlayers: Player[] = [
         errorsLeadingToGoal: 0,
         penaltiesCommitted: 0,
       },
+      nationalTeamStats: {
+        firstApperences: new Date('2019-05-02'),
+        apperences: 33,
+        goals: 7
+      }
     },
   },
   {
@@ -325,7 +345,7 @@ export const allPlayers: Player[] = [
         leftFootGoals: 7,
         rightFootGoals: 7,
         penaltySuccess: 0,
-      },
+      }, 
       passes: {
         assists: 10,
         touches: 90.0,
@@ -349,6 +369,11 @@ export const allPlayers: Player[] = [
         errorsLeadingToGoal: 0,
         penaltiesCommitted: 0,
       },
+      nationalTeamStats: {
+        firstApperences: new Date('2017-08-20'),
+        apperences: 20,
+        goals: 9
+      }
     },
   },
   {
@@ -419,6 +444,11 @@ export const allPlayers: Player[] = [
         errorsLeadingToGoal: 0,
         penaltiesCommitted: 0,
       },
+      nationalTeamStats: {
+        firstApperences: new Date('2017-08-20'),
+        apperences: 20,
+        goals: 9
+      }
     },
   },
   {
@@ -489,6 +519,11 @@ export const allPlayers: Player[] = [
         errorsLeadingToGoal: 0,
         penaltiesCommitted: 0,
       },
+      nationalTeamStats: {
+        firstApperences: new Date('2017-08-20'),
+        apperences: 20,
+        goals: 9
+      }
     },
   },
   {
@@ -559,7 +594,13 @@ export const allPlayers: Player[] = [
         errorsLeadingToGoal: 0,
         penaltiesCommitted: 0,
       },
+      nationalTeamStats: {
+        firstApperences: new Date('2017-08-20'),
+        apperences: 20,
+        goals: 9
+      }
     },
+
   },
   {
     id: 9,
@@ -629,6 +670,11 @@ export const allPlayers: Player[] = [
         errorsLeadingToGoal: 0,
         penaltiesCommitted: 0,
       },
+      nationalTeamStats: {
+        firstApperences: new Date('2017-08-20'),
+        apperences: 20,
+        goals: 9
+      }
     },
   },
   {
@@ -699,6 +745,11 @@ export const allPlayers: Player[] = [
         errorsLeadingToGoal: 0,
         penaltiesCommitted: 0,
       },
+      nationalTeamStats: {
+        firstApperences: new Date('2017-08-20'),
+        apperences: 20,
+        goals: 9
+      }
     },
   },
   {
@@ -769,6 +820,12 @@ export const allPlayers: Player[] = [
         errorsLeadingToGoal: 0,
         penaltiesCommitted: 0,
       },
+      nationalTeamStats: {
+        firstApperences: new Date('2017-08-20'),
+        apperences: 20,
+        goals: 9
+      }
     },
+
   },
 ];

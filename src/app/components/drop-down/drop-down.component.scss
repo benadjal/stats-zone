@@ -12,12 +12,12 @@
   background-color: #2a2a2a;
   cursor: pointer;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   font-size: 18px;
 
   p {
-    flex: 4;
+    flex: 9;
     text-align: center;
   }
 }
@@ -35,7 +35,7 @@
   height: 100%;
   overflow: hidden;
   transition: max-height 0.5s ease;
-  background-color: #333;
+  background-color: #333333;
   padding: 0 15px;
   display: flex;
   flex-direction: column;
@@ -46,5 +46,5 @@
 }
 
 i {
-  font-size: xx-large;
+  font-size: x-large;
 }
