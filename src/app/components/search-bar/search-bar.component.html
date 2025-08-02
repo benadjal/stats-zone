@@ -5,7 +5,7 @@
   </form>
 
 
-  @if(filtredPlayers$ | async; as filtredPlayers){
+  @if(filtredPlayers$ | async; as filtredPlayers){ 
   @if(filtredPlayers.length > 0){
   <div class="search-results">
     @for(player of filtredPlayers; track player.id){

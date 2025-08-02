@@ -18,3 +18,14 @@ h1 {
     font-size: 15px;
     margin-top: 0;
 }
+
+@media screen and (max-width : 1131px) {
+    .title {
+        width: 100%;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: x-large;
+    }
+}

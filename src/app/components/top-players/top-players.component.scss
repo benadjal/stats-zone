@@ -12,7 +12,14 @@ p {
 .list-top-players {
     display: flex;
     flex-direction: row;
-    // background-color: #00ff00;
     justify-content: space-around;
+    flex-wrap: wrap;
+}
 
+
+
+@media screen and (max-width : 1131px) {
+    h2 {
+        text-align: center;
+    }
 }

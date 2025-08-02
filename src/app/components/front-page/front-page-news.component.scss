@@ -21,18 +21,21 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin-top: 2%;
 }
 
 .news-block {
     display: flex;
-    justify-content:space-around;
+    justify-content:center;
+    text-align: center;
     align-items: center;
     border: 1px solid #00FF57;
     width: 400px;
     height: 120px;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2%;
 }
 
 .news-block:hover {
@@ -41,4 +44,11 @@ p {
     box-shadow: 0 30px 40px rgba(0, 255, 87, 0.3);
     cursor: pointer;
     color: white;
+}
+
+@media screen and (max-width : 1131px) {
+    h2 {
+        margin-top: 4%;
+        text-align: center;
+    }
 }

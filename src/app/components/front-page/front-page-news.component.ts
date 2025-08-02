@@ -12,7 +12,7 @@ export class FrontPageComponent {
   newsFront: NewsFrontPage[] = [
     {
       icon: "arrow_outward",
-      text: "Tops buteurs de la semaine"
+      text: "Meilleurs buteurs"
     },
 
     {
