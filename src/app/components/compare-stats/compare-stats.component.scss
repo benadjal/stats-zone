@@ -129,3 +129,10 @@ hr {
     width: 95%;
   }
 }
+
+@media screen and (max-width : 490px) {
+
+  .compare-stats-container {
+    width: 100%;
+  }
+}
