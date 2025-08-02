@@ -38,3 +38,14 @@ html {
     font-size: 30px;
     font-weight: bold;
 }
+
+
+@media screen and (max-width: 751px) {
+    .text-xl {
+    font-size: 16px;
+}
+
+.text-lg {
+    font-size: 12px;
+}
+}

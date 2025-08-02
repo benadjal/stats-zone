@@ -1,7 +1,7 @@
 .search-bar {
-    display: flex;
-    justify-content: center;
-    margin-top: 2%;
+    margin-top: 14%;
+    width: 40%;
+    margin: 0 auto;
 }
 
 .player-detail-container {
@@ -18,14 +18,19 @@
     gap: 25px;
     padding: 1%;
 
-    .player-picture img {
-        border-radius: 50%;
-        width: 130px;
+    .player-picture {
+        margin-top: 2%;
+
+        img {
+            border-radius: 50%;
+            width: 130px;
+        }
     }
 
     .player-name-team-contrat {
         display: flex;
         flex-direction: column;
+        margin-bottom: 2%;
     }
 }
 
@@ -38,14 +43,19 @@
     width: 30%;
     border-radius: 10px;
     gap: 20px;
+
+    span {
+        margin: 1% 0 1% 0;
+    }
 }
 
 .player-more-details {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     border: 1px solid #00FF57;
     border-radius: 10px;
-    width: 86%;
+    width: 85%;
     margin: auto;
     margin-top: 3%;
 }
@@ -60,30 +70,47 @@
 }
 
 .attributs-and-national-stats {
-    display: flex;
-    justify-content: center;
-    margin: 2% 0 2% 0;
-    gap: 20px
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+//   margin: 2% 0;
+margin: auto;
+  width: 87%;
+//   background-color: aquamarine;
+  gap: 20px;
 }
 
 .attibuts,
 .national-team-stats {
-    width: 42%;
-    display: flex;
-    flex-direction: column;
-    // justify-content: center;
-    align-items: center;
-
-    img {
-        margin: 2% 0 2% 0;
-        width: 65%;
-        height: auto;
-    }
-
-    span {
-        margin-top: 2%;
-    }
+  flex: 1 1 350px; /* min-width: 350px et peuvent grandir */
+  max-width: 48%; /* évite que ça dépasse sur grands écrans */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2% 0 2% 0;
 }
+
+// .attibuts {
+//   background-color: olivedrab;
+// }
+
+// .national-team-stats {
+//   background-color: antiquewhite;
+// }
+
+.attibuts img,
+.national-team-stats img {
+  margin: 2% 0;
+  width: 65%;
+  height: auto;
+}
+
+.attibuts span,
+.national-team-stats span {
+  margin-top: 2%;
+}
+
 
 .national-team {
     display: flex;
@@ -101,7 +128,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // background-color: #00FF57;
 }
 
 .national-team-apperances-and-goals {
@@ -124,6 +150,7 @@
 .defense,
 .passes {
     width: 80%;
+
     p {
         display: flex;
         justify-content: space-between;
@@ -140,16 +167,23 @@
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 751px) {
     .player-detail-container {
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
 
+    .player-more-details {
+        flex-direction: column;
+    }
+
     .player-essential-informations,
     .player-market-value {
-        width: 90%;
+        margin-bottom: 2%;
+
+        padding: 0;
+        width: 85%;
     }
 
     .player-essential-informations {
@@ -161,4 +195,21 @@
             width: 100px;
         }
     }
+
+    .search-bar {
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-width : 571px) {
+
+ .attributs-and-national-stats {
+    width: 90%;
+        margin-top: 6%;
+
+}
+.attibuts, .national-team-stats {
+    max-width: 95%;
+}
 }
