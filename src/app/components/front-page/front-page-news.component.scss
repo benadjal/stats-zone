@@ -11,10 +11,12 @@ h2 {
     font-size:35px;
 }
 
-p {
+span {
     color: white;
     font-family: 'Orbitron';
     font-size: 20px;
+    max-width: 200px;
+    text-align: center;
 }
 
 .list-news{
@@ -27,11 +29,10 @@ p {
 
 .news-block {
     display: flex;
-    justify-content:center;
-    text-align: center;
+    justify-content:space-around;
     align-items: center;
     border: 1px solid #00FF57;
-    width: 400px;
+    width: 350px;
     height: 120px;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
