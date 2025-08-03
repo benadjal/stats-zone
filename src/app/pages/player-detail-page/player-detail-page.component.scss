@@ -65,30 +65,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
     padding: 1% 1% 1% 1%;
 }
 
 .attributs-and-national-stats {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-//   margin: 2% 0;
-margin: auto;
-  width: 87%;
-//   background-color: aquamarine;
-  gap: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    //   margin: 2% 0;
+    margin: auto;
+    width: 87%;
+    //   background-color: aquamarine;
+    gap: 20px;
 }
 
 .attibuts,
 .national-team-stats {
-  flex: 1 1 350px; /* min-width: 350px et peuvent grandir */
-  max-width: 48%; /* évite que ça dépasse sur grands écrans */
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 2% 0 2% 0;
+    flex: 1 1 350px;
+    max-width: 48%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2% 0 2% 0;
 }
 
 // .attibuts {
@@ -101,14 +100,14 @@ margin: auto;
 
 .attibuts img,
 .national-team-stats img {
-  margin: 2% 0;
-  width: 65%;
-  height: auto;
+    margin: 2% 0;
+    width: 65%;
+    height: auto;
 }
 
 .attibuts span,
 .national-team-stats span {
-  margin-top: 2%;
+    margin-top: 2%;
 }
 
 
@@ -166,8 +165,18 @@ margin: auto;
     }
 }
 
+@media screen and (max-width: 912px) {
+    .national-team {
+        img {
+            width: 70px;
+        }
+    }
+}
+
+
 
 @media screen and (max-width: 751px) {
+
     .player-detail-container {
         flex-direction: column;
         align-items: center;
@@ -176,6 +185,10 @@ margin: auto;
 
     .player-more-details {
         flex-direction: column;
+    }
+
+    .detail {
+        margin: 2% 0 4% 0;
     }
 
     .player-essential-informations,
@@ -204,12 +217,14 @@ margin: auto;
 
 @media screen and (max-width : 571px) {
 
- .attributs-and-national-stats {
-    width: 90%;
+    .attributs-and-national-stats {
+        width: 90%;
         margin-top: 6%;
 
-}
-.attibuts, .national-team-stats {
-    max-width: 95%;
-}
+    }
+
+    .attibuts,
+    .national-team-stats {
+        max-width: 95%;
+    }
 }
