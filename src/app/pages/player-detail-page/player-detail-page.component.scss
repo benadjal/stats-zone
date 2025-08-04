@@ -158,7 +158,7 @@
 
 .season-heat-map {
     img {
-        width: 30%;
+        width: 40%;
         margin: auto;
         margin-bottom: 2%;
         margin-top: 2%;
@@ -171,6 +171,12 @@
             width: 70px;
         }
     }
+
+    .season-heat-map {
+    img {
+        width: 90%;
+    }
+}
 }
 
 
@@ -226,5 +232,6 @@
     .attibuts,
     .national-team-stats {
         max-width: 95%;
+        padding: 2%;
     }
 }

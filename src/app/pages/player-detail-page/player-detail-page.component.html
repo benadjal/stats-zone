@@ -25,7 +25,7 @@
   </div>
 </div>
 
-<div class="player-more-details text"> 
+<div class="player-more-details text">
   <div class="detail">
     <span class="text text-lg text-muted">Nationalité</span>
     <span class="text-xl text-bold">{{ player.country }}</span>
@@ -54,20 +54,19 @@
 </div>
 
 <div class="attributs-and-national-stats">
-  <div class="attibuts border-green-rounded ">
-    <span class="text text-lg text-muted">Aperçu des attributs</span>
+  <div class="attibuts border-green-rounded">
+    <span class="text text-bold text-xl">Aperçu des attributs</span>
     <img src="assets/graph-stats.png">
   </div>
 
   <div class="national-team-stats border-green-rounded ">
-    <span class="text text-lg text-muted">Equipe nationale</span>
+    <span class="text text-bold text-xl">Equipe nationale</span>
 
     <div class="national-team">
       <img src="assets/flag.png">
       <div class="national-team-name-and-start">
         <p class="text text-xl">{{player.country}}</p>
-        <p class="text text-lg text-muted">Début le : {{player.stats?.nationalTeamStats?.firstApperences | date : 'dd
-          MMMM, yyyy'}}</p>
+        <p class="text text-lg text-muted">Début le : {{player.stats?.nationalTeamStats?.firstApperences | date : 'dd MMMM, yyyy'}}</p>
       </div>
     </div>
 
@@ -86,7 +85,9 @@
 </div>
 
 <div class="detailed-stats border-green-rounded">
-  <p class="text text-bold text-xl">Saison</p>
+
+  <span class="text text-bold text-xl">Saison</span>
+
 
   <div class="season-heat-map">
     <app-drop-down [title]="'Carte thérmique de la saison'">

@@ -48,3 +48,13 @@
 i {
   font-size: x-large;
 }
+
+
+@media screen and (max-width : 751px) {
+  .dropdown-header {
+    font-size: 15px;
+  }
+  .dropdown-container {
+    font-size: small;
+  }
+}
