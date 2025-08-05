@@ -41,7 +41,6 @@ export class SearchBarComponent {
 
   selectPlayer(player: Player): void {
     if (this.mode === 'search') {
-      this.searchForm.get('search')?.setValue('', { emitEvent: true });
       this.router.navigate(['player-detail', player.id]);
     }
     else {
