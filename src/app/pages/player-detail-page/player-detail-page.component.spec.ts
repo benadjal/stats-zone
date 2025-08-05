@@ -8,10 +8,9 @@ describe('PlayerDetailPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PlayerDetailPageComponent]
-    })
-    .compileComponents();
-    
+      imports: [PlayerDetailPageComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(PlayerDetailPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

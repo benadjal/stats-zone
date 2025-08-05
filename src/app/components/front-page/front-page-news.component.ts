@@ -6,23 +6,23 @@ import { NewsFrontPage } from '../../models/front-page-news.model';
   standalone: true,
   imports: [],
   templateUrl: './front-page-news.component.html',
-  styleUrl: './front-page-news.component.scss'
+  styleUrl: './front-page-news.component.scss',
 })
 export class FrontPageComponent {
   newsFront: NewsFrontPage[] = [
     {
-      icon: "arrow_outward",
-      text: "Meilleurs buteurs"
+      icon: 'arrow_outward',
+      text: 'Meilleurs buteurs',
     },
 
     {
-      icon: "stars",
-      text: "Performences exceptionnelles"
+      icon: 'stars',
+      text: 'Performences exceptionnelles',
     },
 
     {
-      icon: "search",
-      text: "Nouveaux talents à suivre"
-    }
-  ]
+      icon: 'search',
+      text: 'Nouveaux talents à suivre',
+    },
+  ];
 }

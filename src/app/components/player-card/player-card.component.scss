@@ -1,87 +1,88 @@
 .player-card {
-    color: white;
-    font-family: 'Orbitron';
-    width: 230px;
-    border-color: aqua;
-    border-width: 2px;
-    border: 1px solid #00FF57;
-    border-radius: 6px;
-    margin-top: 15%;
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  color: white;
+  font-family: "Orbitron";
+  width: 230px;
+  border-color: aqua;
+  border-width: 2px;
+  border: 1px solid #00ff57;
+  border-radius: 6px;
+  margin-top: 15%;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
 }
 
 .player-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 30px 40px rgba(0, 255, 87, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 30px 40px rgba(0, 255, 87, 0.3);
 }
 
 .player-picture {
-    display: flex;
-    justify-content: center;
-    margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
 
-    img {
-        border-radius: 50%;
-        width: 50%;
-    }
+  img {
+    border-radius: 50%;
+    width: 50%;
+  }
 }
 
 .name-and-last-name {
-    display: flex;
-    justify-content: center;
-    font-size: large;
-    flex-wrap: wrap;
-    font-size: larger;
+  display: flex;
+  justify-content: center;
+  font-size: large;
+  flex-wrap: wrap;
+  font-size: larger;
 }
 
 .stats {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .check-profil {
-    @extend .stats;
-    margin-bottom: 5%;
+  @extend .stats;
+  margin-bottom: 5%;
+  cursor: pointer;
+
+  button {
+    color: white;
+    background-color: black;
+    border: 1px solid #00ff57;
+    width: 80%;
+    height: 35px;
+    border-radius: 10px;
+    font-family: "Orbitron";
+    font-weight: bold;
+    font-size: medium;
     cursor: pointer;
-
-    button {
-        color: white;
-        background-color: black;
-        border: 1px solid #00FF57;
-        width: 80%;
-        height: 35px;
-        border-radius: 10px;
-        font-family: 'Orbitron';
-        font-weight: bold;
-        font-size: medium;
-        cursor: pointer;
-
-    }
+  }
 }
 
 .check-profil:hover {
-    button {
-        background-color: #1e5a32;
-    }
+  button {
+    background-color: #1e5a32;
+  }
 }
 
 .goals,
 .assists,
 .mark {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: small;
-    font-weight: bold;
-    color: #d8d9d9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: small;
+  font-weight: bold;
+  color: #d8d9d9;
 }
 
 .stats-title {
-    margin: 0;
+  margin: 0;
 }
 
 .stats-details {
-    color: white;
-    font-size: large;
+  color: white;
+  font-size: large;
 }

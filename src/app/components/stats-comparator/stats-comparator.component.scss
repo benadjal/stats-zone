@@ -1,6 +1,6 @@
 h2 {
   color: white;
-  font-family: 'Orbitron';
+  font-family: "Orbitron";
   font-size: 27px;
   margin-bottom: 0;
   margin-top: 2%;
@@ -9,7 +9,7 @@ h2 {
 .compare-stats-container {
   width: 50%;
   margin: auto;
-  border: 1px solid #00FF57;
+  border: 1px solid #00ff57;
   margin-top: 3%;
   display: flex;
   flex-direction: column;
@@ -23,15 +23,14 @@ h2 {
 button {
   color: white;
   background-color: black;
-  border: 1px solid #00FF57;
+  border: 1px solid #00ff57;
   width: 140px;
   height: 35px;
   border-radius: 10px;
-  font-family: 'Orbitron';
+  font-family: "Orbitron";
   font-weight: bold;
   font-size: medium;
   cursor: pointer;
-
 }
 
 button:hover {
@@ -43,11 +42,9 @@ button:hover {
   margin: 2% 0% 2% 0;
 }
 
-
-
 hr {
   width: 50%;
-  border: 1px solid grey
+  border: 1px solid grey;
 }
 
 .result-item {
@@ -56,7 +53,6 @@ hr {
   width: 80%;
   background-color: #1e1e1e;
   border-radius: 10px;
-
 }
 
 .result-item:hover {
@@ -80,15 +76,14 @@ hr {
 
 .result-item-name {
   color: white;
-  font-family: 'Orbitron';
+  font-family: "Orbitron";
   font-size: 80%;
 }
 
 .result-item-team {
   color: white;
-  font-family: 'Orbitron';
+  font-family: "Orbitron";
   font-size: 65%;
-
 }
 
 .compare-btn {
@@ -96,7 +91,7 @@ hr {
 }
 
 .material-icons {
-  color: #00FF57;
+  color: #00ff57;
   font-size: 30px;
   font-weight: bold;
   margin-right: 1%;
@@ -110,8 +105,7 @@ hr {
   transition: 0.3s ease;
 }
 
-
-@media screen and (max-width : 1131px) {
+@media screen and (max-width: 1131px) {
   h2 {
     margin-top: 4%;
 
@@ -119,8 +113,7 @@ hr {
   }
 }
 
-@media screen and (max-width : 1231px) {
-
+@media screen and (max-width: 1231px) {
   .compare-stats-container {
     width: 80%;
   }
@@ -130,8 +123,7 @@ hr {
   }
 }
 
-@media screen and (max-width : 490px) {
-
+@media screen and (max-width: 490px) {
   .compare-stats-container {
     width: 100%;
   }

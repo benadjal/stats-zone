@@ -1,55 +1,57 @@
 h2 {
-    color: white;
-    font-family: 'Orbitron';
-    font-size: 27px;
-    margin-bottom: 0;
-    margin-top: 2%;
+  color: white;
+  font-family: "Orbitron";
+  font-size: 27px;
+  margin-bottom: 0;
+  margin-top: 2%;
 }
 
 .material-icons {
-    color: #00FF57;
-    font-size:35px;
+  color: #00ff57;
+  font-size: 35px;
 }
 
 span {
-    color: white;
-    font-family: 'Orbitron';
-    font-size: 20px;
-    max-width: 200px;
-    text-align: center;
+  color: white;
+  font-family: "Orbitron";
+  font-size: 20px;
+  max-width: 200px;
+  text-align: center;
 }
 
-.list-news{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 2%;
+.list-news {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 2%;
 }
 
 .news-block {
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-    border: 1px solid #00FF57;
-    width: 350px;
-    height: 120px;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 2%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #00ff57;
+  width: 350px;
+  height: 120px;
+  border-radius: 10px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  margin-bottom: 2%;
 }
 
 .news-block:hover {
-    transform: scale(1.10);
-    background-color: #003b14;
-    box-shadow: 0 30px 40px rgba(0, 255, 87, 0.3);
-    cursor: pointer;
-    color: white;
+  transform: scale(1.1);
+  background-color: #003b14;
+  box-shadow: 0 30px 40px rgba(0, 255, 87, 0.3);
+  cursor: pointer;
+  color: white;
 }
 
-@media screen and (max-width : 1131px) {
-    h2 {
-        margin-top: 4%;
-        text-align: center;
-    }
+@media screen and (max-width: 1131px) {
+  h2 {
+    margin-top: 4%;
+    text-align: center;
+  }
 }

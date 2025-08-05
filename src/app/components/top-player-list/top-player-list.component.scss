@@ -1,25 +1,23 @@
 h2 {
-    color: white;
-    font-family: 'Orbitron';
-    font-size: 27px;
-    margin-bottom: 0;
+  color: white;
+  font-family: "Orbitron";
+  font-size: 27px;
+  margin-bottom: 0;
 }
 
 p {
-    color: aliceblue;
+  color: aliceblue;
 }
 
 .list-top-players {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-
-
-@media screen and (max-width : 1131px) {
-    h2 {
-        text-align: center;
-    }
+@media screen and (max-width: 1131px) {
+  h2 {
+    text-align: center;
+  }
 }

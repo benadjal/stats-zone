@@ -1,165 +1,290 @@
 <div class="main-detailed-page-container">
-  @if(player$ | async; as player) {
-  <div class="search-bar">
-    <app-search-bar [color]="'#00FF57'"></app-search-bar>
-  </div>
-
-  <div class="player-detail-container">
-    <div class="player-essential-informations border-green-rounded">
-      <div class="player-picture">
-        <img [src]="player.pictureUrl" [alt]="player.name + ' ' + player.lastName" />
-      </div>
-
-      <div class="player-name-team-contrat">
-        <span class="text text-xl text-bold">{{ player.name }} {{ player.lastName }}</span>
-        <span class="text text-lg">{{ player.position }}</span>
-        <span class="text text-xl">{{ player.team }}</span>
-        <span class="text text-lg text-muted">
-          Contrat jusqu'au : {{ player.contractEndDate | date }}
-        </span>
-      </div>
+  @if (player$ | async; as player) {
+    <div class="search-bar">
+      <app-search-bar [color]="'#00FF57'"></app-search-bar>
     </div>
 
-    <div class="player-market-value">
-      <span class="text text-bold text-xl">Valeur marchande</span>
-      <span class="text text-value">{{player.marketValue}}M €</span>
-    </div>
-  </div>
+    <div class="player-detail-container">
+      <div class="player-essential-informations border-green-rounded">
+        <div class="player-picture">
+          <img
+            [src]="player.pictureUrl"
+            [alt]="player.name + ' ' + player.lastName"
+          />
+        </div>
 
-  <div class="player-more-details text">
-    <div class="detail">
-      <span class="text text-lg text-muted">Nationalité</span>
-      <span class="text-xl text-bold">{{ player.country }}</span>
-    </div>
-
-    <div class="detail">
-      <span class="text text-lg text-muted">{{player.birthDay| date}}</span>
-      <span class="text-xl text-bold">{{ player.age }} ans</span>
-    </div>
-    <div class="detail">
-      <span class="text text-lg text-muted">Taille</span>
-      <span class="text-xl text-bold">{{ player.size }} cm</span>
-    </div>
-    <div class="detail">
-      <span class="text text-lg text-muted">Pied préféré</span>
-      <span class="text-xl text-bold">{{ player.bestFoot }}</span>
-    </div>
-    <div class="detail">
-      <span class="text text-lg text-muted">Poste</span>
-      <span class="text-xl text-bold">{{ player.position }}</span>
-    </div>
-    <div class="detail">
-      <span class="text text-lg text-muted">Numéro de maillot</span>
-      <span class="text-xl text-bold">{{ player.shirtNumber }}</span>
-    </div>
-  </div>
-
-  <div class="attributs-and-national-stats">
-    <div class="attibuts border-green-rounded">
-      <span class="text text-bold text-xl">Aperçu des attributs</span>
-      <img src="assets/graph-stats.png">
-    </div>
-
-    <div class="national-team-stats border-green-rounded ">
-      <span class="text text-bold text-xl">Equipe nationale</span>
-
-      <div class="national-team">
-        <img src="assets/flag.png">
-        <div class="national-team-name-and-start">
-          <p class="text text-xl">{{player.country}}</p>
-          <p class="text text-lg text-muted">Début le : {{player.stats?.nationalTeamStats?.firstApperences | date}}</p>
+        <div class="player-name-team-contrat">
+          <span class="text text-xl text-bold"
+            >{{ player.name }} {{ player.lastName }}</span
+          >
+          <span class="text text-lg">{{ player.position }}</span>
+          <span class="text text-xl">{{ player.team }}</span>
+          <span class="text text-lg text-muted">
+            Contrat jusqu'au : {{ player.contractEndDate | date }}
+          </span>
         </div>
       </div>
 
-      <div class="national-team-apperances-and-goals">
-        <div class="national-team-appearances">
-          <p class="text text-xl">Apparitions</p>
-          <p class="text text-value">{{player.stats?.nationalTeamStats?.apperences}}</p>
+      <div class="player-market-value">
+        <span class="text text-bold text-xl">Valeur marchande</span>
+        <span class="text text-value">{{ player.marketValue }}M €</span>
+      </div>
+    </div>
+
+    <div class="player-more-details text">
+      <div class="detail">
+        <span class="text text-lg text-muted">Nationalité</span>
+        <span class="text-xl text-bold">{{ player.country }}</span>
+      </div>
+
+      <div class="detail">
+        <span class="text text-lg text-muted">{{
+          player.birthDay | date
+        }}</span>
+        <span class="text-xl text-bold">{{ player.age }} ans</span>
+      </div>
+      <div class="detail">
+        <span class="text text-lg text-muted">Taille</span>
+        <span class="text-xl text-bold">{{ player.size }} cm</span>
+      </div>
+      <div class="detail">
+        <span class="text text-lg text-muted">Pied préféré</span>
+        <span class="text-xl text-bold">{{ player.bestFoot }}</span>
+      </div>
+      <div class="detail">
+        <span class="text text-lg text-muted">Poste</span>
+        <span class="text-xl text-bold">{{ player.position }}</span>
+      </div>
+      <div class="detail">
+        <span class="text text-lg text-muted">Numéro de maillot</span>
+        <span class="text-xl text-bold">{{ player.shirtNumber }}</span>
+      </div>
+    </div>
+
+    <div class="attributs-and-national-stats">
+      <div class="attibuts border-green-rounded">
+        <span class="text text-bold text-xl">Aperçu des attributs</span>
+        <img src="assets/graph-stats.png" />
+      </div>
+
+      <div class="national-team-stats border-green-rounded">
+        <span class="text text-bold text-xl">Equipe nationale</span>
+
+        <div class="national-team">
+          <img src="assets/flag.png" />
+          <div class="national-team-name-and-start">
+            <p class="text text-xl">{{ player.country }}</p>
+            <p class="text text-lg text-muted">
+              Début le :
+              {{ player.stats?.nationalTeamStats?.firstApperences | date }}
+            </p>
+          </div>
         </div>
 
-        <div class="national-team-goals">
-          <p class="text text-xl">Buts</p>
-          <p class="text text-value">{{player.stats?.nationalTeamStats?.goals}}</p>
+        <div class="national-team-apperances-and-goals">
+          <div class="national-team-appearances">
+            <p class="text text-xl">Apparitions</p>
+            <p class="text text-value">
+              {{ player.stats?.nationalTeamStats?.apperences }}
+            </p>
+          </div>
+
+          <div class="national-team-goals">
+            <p class="text text-xl">Buts</p>
+            <p class="text text-value">
+              {{ player.stats?.nationalTeamStats?.goals }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="detailed-stats border-green-rounded">
+    <div class="detailed-stats border-green-rounded">
+      <span class="text text-bold text-xl" id="seaonTitle">Saison</span>
 
-    <span class="text text-bold text-xl" id="seaonTitle">Saison</span>
+      <div class="season-heat-map">
+        <app-drop-down [title]="'Carte thérmique de la saison'">
+          <img
+            src="assets/graph-stats.png"
+            alt="Carte thermique de la saison"
+          />
+        </app-drop-down>
+      </div>
 
+      <div class="games">
+        <app-drop-down [title]="'Matchs'">
+          <p>
+            Apparitions : <span>{{ player.stats?.games?.appearances }}</span>
+          </p>
+          <p>
+            Titulaire : <span>{{ player.stats?.games?.starts }}</span>
+          </p>
+          <p>
+            Minutes par match :
+            <span>{{ player.stats?.games?.minutesPerGame }}</span>
+          </p>
+          <p>
+            Total des minutes jouées :
+            <span>{{ player.stats?.games?.totalMinutes }}</span>
+          </p>
+          <p>
+            Équipe de la semaine :
+            <span>{{ player.stats?.games?.teamOfTheWeek }}</span>
+          </p>
+        </app-drop-down>
+      </div>
 
-    <div class="season-heat-map">
-      <app-drop-down [title]="'Carte thérmique de la saison'">
-        <img src="assets/graph-stats.png" alt="Carte thermique de la saison" />
-      </app-drop-down>
+      <div class="attack">
+        <app-drop-down [title]="'Attaque'">
+          <p>
+            Buts : <span>{{ player.stats?.attack?.goals }}</span>
+          </p>
+          <p>
+            Fréquence de but (en minutes) :
+            <span>{{ player.stats?.attack?.goalFrequency }}</span>
+          </p>
+          <p>
+            Buts par match :
+            <span>{{ player.stats?.attack?.goalsPerGame }}</span>
+          </p>
+          <p>
+            Total des tirs : <span>{{ player.stats?.attack?.totalShots }}</span>
+          </p>
+          <p>
+            Tirs cadrés par match :
+            <span>{{ player.stats?.attack?.shotsOnTargetPerGame }}</span>
+          </p>
+          <p>
+            Grosses occasions manquées :
+            <span>{{ player.stats?.attack?.bigChancesMissed }}</span>
+          </p>
+          <p>
+            Taux de conversion :
+            <span>{{ player.stats?.attack?.conversionRate }}</span>
+          </p>
+          <p>
+            Buts sur pénalty :
+            <span>{{ player.stats?.attack?.penaltyGoals }}</span>
+          </p>
+          <p>
+            Penalty réussi :
+            <span>{{ player.stats?.attack?.penaltySuccessRate }}</span>
+          </p>
+          <p>
+            Buts du coup-franc :
+            <span>{{ player.stats?.attack?.freeKickGoals }}</span>
+          </p>
+          <p>
+            Pourcentage de buts sur coups-francs :
+            <span>{{ player.stats?.attack?.freeKickGoalPercentage }}</span>
+          </p>
+          <p>
+            Buts dans la surface de réparation :
+            <span>{{ player.stats?.attack?.goalsInsideBox }}</span>
+          </p>
+          <p>
+            Buts à l'extérieur de la surface de réparation :
+            <span>{{ player.stats?.attack?.goalsOutsideBox }}</span>
+          </p>
+          <p>
+            Buts de la tête :
+            <span>{{ player.stats?.attack?.headedGoals }}</span>
+          </p>
+          <p>
+            Buts du pied gauche :
+            <span>{{ player.stats?.attack?.leftFootGoals }}</span>
+          </p>
+          <p>
+            Buts du pied droit :
+            <span>{{ player.stats?.attack?.rightFootGoals }}</span>
+          </p>
+          <p>
+            Penalty réussi :
+            <span>{{ player.stats?.attack?.penaltySuccess }}</span>
+          </p>
+        </app-drop-down>
+      </div>
+
+      <div class="passes">
+        <app-drop-down [title]="'Passes'">
+          <p>
+            Passes décisives : <span>{{ player.stats?.passes?.assists }}</span>
+          </p>
+          <p>
+            Touches : <span>{{ player.stats?.passes?.touches }}</span>
+          </p>
+          <p>
+            Grosses occasions créées :
+            <span>{{ player.stats?.passes?.bigChancesCreated }}</span>
+          </p>
+          <p>
+            Passes clés : <span>{{ player.stats?.passes?.keyPasses }}</span>
+          </p>
+          <p>
+            Passe précise :
+            <span>{{ player.stats?.passes?.passAccuracy }}</span>
+          </p>
+          <p>
+            Précision dans son camp :
+            <span>{{ player.stats?.passes?.accuracyOwnHalf }}</span>
+          </p>
+          <p>
+            Précision dans le camp adverse :
+            <span>{{ player.stats?.passes?.accuracyOppHalf }}</span>
+          </p>
+          <p>
+            Passes longues (réussies) :
+            <span>{{ player.stats?.passes?.longPasses }}</span>
+          </p>
+          <p>
+            Passes lobées précises :
+            <span>{{ player.stats?.passes?.lobbedPasses }}</span>
+          </p>
+          <p>
+            Bons centres : <span>{{ player.stats?.passes?.goodCrosses }}</span>
+          </p>
+        </app-drop-down>
+      </div>
+
+      <div class="defense">
+        <app-drop-down [title]="'Défense'">
+          <p>
+            Interceptions :
+            <span>{{ player.stats?.defense?.interceptions }}</span>
+          </p>
+          <p>
+            Tacles par match :
+            <span>{{ player.stats?.defense?.tacklesPerMatch }}</span>
+          </p>
+          <p>
+            Possession gagnée (tiers offensif) :
+            <span>{{ player.stats?.defense?.possessionWon }}</span>
+          </p>
+          <p>
+            Ballons récupérés par match :
+            <span>{{ player.stats?.defense?.ballsRecovered }}</span>
+          </p>
+          <p>
+            Dribbles subis par match :
+            <span>{{ player.stats?.defense?.dribbledPast }}</span>
+          </p>
+          <p>
+            Dégagements : <span>{{ player.stats?.defense?.clearances }}</span>
+          </p>
+          <p>
+            Erreurs menant à un tir :
+            <span>{{ player.stats?.defense?.errorsLeadingToShot }}</span>
+          </p>
+          <p>
+            Erreurs provoquant un but :
+            <span>{{ player.stats?.defense?.errorsLeadingToGoal }}</span>
+          </p>
+          <p>
+            Penalties commis :
+            <span>{{ player.stats?.defense?.penaltiesCommitted }}</span>
+          </p>
+        </app-drop-down>
+      </div>
     </div>
-
-    <div class="games">
-      <app-drop-down [title]="'Matchs'">
-        <p>Apparitions : <span>{{ player.stats?.games?.appearances }}</span></p>
-        <p>Titulaire : <span>{{ player.stats?.games?.starts }}</span></p>
-        <p>Minutes par match : <span>{{ player.stats?.games?.minutesPerGame }}</span></p>
-        <p>Total des minutes jouées : <span>{{ player.stats?.games?.totalMinutes }}</span></p>
-        <p>Équipe de la semaine : <span>{{ player.stats?.games?.teamOfTheWeek }}</span></p>
-      </app-drop-down>
-    </div>
-
-    <div class="attack">
-      <app-drop-down [title]="'Attaque'">
-        <p>Buts : <span>{{ player.stats?.attack?.goals }}</span></p>
-        <p>Fréquence de but (en minutes) : <span>{{ player.stats?.attack?.goalFrequency }}</span></p>
-        <p>Buts par match : <span>{{ player.stats?.attack?.goalsPerGame }}</span></p>
-        <p>Total des tirs : <span>{{ player.stats?.attack?.totalShots }}</span></p>
-        <p>Tirs cadrés par match : <span>{{ player.stats?.attack?.shotsOnTargetPerGame }}</span></p>
-        <p>Grosses occasions manquées : <span>{{ player.stats?.attack?.bigChancesMissed }}</span></p>
-        <p>Taux de conversion : <span>{{ player.stats?.attack?.conversionRate }}</span></p>
-        <p>Buts sur pénalty : <span>{{ player.stats?.attack?.penaltyGoals }}</span></p>
-        <p>Penalty réussi : <span>{{ player.stats?.attack?.penaltySuccessRate }}</span></p>
-        <p>Buts du coup-franc : <span>{{ player.stats?.attack?.freeKickGoals }}</span></p>
-        <p>Pourcentage de buts sur coups-francs : <span>{{ player.stats?.attack?.freeKickGoalPercentage }}</span></p>
-        <p>Buts dans la surface de réparation : <span>{{ player.stats?.attack?.goalsInsideBox }}</span></p>
-        <p>Buts à l'extérieur de la surface de réparation : <span>{{ player.stats?.attack?.goalsOutsideBox }}</span></p>
-        <p>Buts de la tête : <span>{{ player.stats?.attack?.headedGoals }}</span></p>
-        <p>Buts du pied gauche : <span>{{ player.stats?.attack?.leftFootGoals }}</span></p>
-        <p>Buts du pied droit : <span>{{ player.stats?.attack?.rightFootGoals }}</span></p>
-        <p>Penalty réussi : <span>{{ player.stats?.attack?.penaltySuccess }}</span></p>
-      </app-drop-down>
-    </div>
-
-    <div class="passes">
-      <app-drop-down [title]="'Passes'">
-        <p>Passes décisives : <span>{{ player.stats?.passes?.assists }}</span></p>
-        <p>Touches : <span>{{ player.stats?.passes?.touches }}</span></p>
-        <p>Grosses occasions créées : <span>{{ player.stats?.passes?.bigChancesCreated }}</span></p>
-        <p>Passes clés : <span>{{ player.stats?.passes?.keyPasses }}</span></p>
-        <p>Passe précise : <span>{{ player.stats?.passes?.passAccuracy }}</span></p>
-        <p>Précision dans son camp : <span>{{ player.stats?.passes?.accuracyOwnHalf }}</span></p>
-        <p>Précision dans le camp adverse : <span>{{ player.stats?.passes?.accuracyOppHalf }}</span></p>
-        <p>Passes longues (réussies) : <span>{{ player.stats?.passes?.longPasses }}</span></p>
-        <p>Passes lobées précises : <span>{{ player.stats?.passes?.lobbedPasses }}</span></p>
-        <p>Bons centres : <span>{{ player.stats?.passes?.goodCrosses }}</span></p>
-      </app-drop-down>
-    </div>
-
-    <div class="defense">
-      <app-drop-down [title]="'Défense'">
-        <p>Interceptions : <span>{{ player.stats?.defense?.interceptions }}</span></p>
-        <p>Tacles par match : <span>{{ player.stats?.defense?.tacklesPerMatch }}</span></p>
-        <p>Possession gagnée (tiers offensif) : <span>{{ player.stats?.defense?.possessionWon }}</span></p>
-        <p>Ballons récupérés par match : <span>{{ player.stats?.defense?.ballsRecovered }}</span></p>
-        <p>Dribbles subis par match : <span>{{ player.stats?.defense?.dribbledPast }}</span></p>
-        <p>Dégagements : <span>{{ player.stats?.defense?.clearances }}</span></p>
-        <p>Erreurs menant à un tir : <span>{{ player.stats?.defense?.errorsLeadingToShot }}</span></p>
-        <p>Erreurs provoquant un but : <span>{{ player.stats?.defense?.errorsLeadingToGoal }}</span></p>
-        <p>Penalties commis : <span>{{ player.stats?.defense?.penaltiesCommitted }}</span></p>
-      </app-drop-down>
-    </div>
-  </div>
-
-
-
-
   }
 </div>

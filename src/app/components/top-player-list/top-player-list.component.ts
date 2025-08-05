@@ -10,12 +10,10 @@ import { PlayerCardComponent } from '../player-card/player-card.component';
   standalone: true,
   imports: [AsyncPipe, PlayerCardComponent],
   templateUrl: './top-player-list.component.html',
-  styleUrl: './top-player-list.component.scss'
+  styleUrl: './top-player-list.component.scss',
 })
 export class TopPlayerListComponent {
-
   playerService = inject(PlayersService);
 
-  topPlayers$ : Observable<Player[]> = this.playerService.getTopPlayers();
-
+  topPlayers$: Observable<Player[]> = this.playerService.getTopPlayers();
 }

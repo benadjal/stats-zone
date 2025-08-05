@@ -1,51 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
 html {
-    background-color: black;
+  background-color: black;
 }
 
 .border-green-rounded {
-    border: 1px solid #00FF57;
-    border-radius: 10px;
+  border: 1px solid #00ff57;
+  border-radius: 10px;
 }
 
 .text {
-    font-family: 'Orbitron';
-    color: white;
+  font-family: "Orbitron";
+  color: white;
 }
 
 .text-xl {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .text-lg {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .text-bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .text-muted {
-    color: rgb(213, 190, 190);
+  color: rgb(213, 190, 190);
 }
 
 .text-accent {
-    color: #00FF57;
+  color: #00ff57;
 }
 
 .text-value {
-    color: green;
-    font-size: 30px;
-    font-weight: bold;
+  color: green;
+  font-size: 30px;
+  font-weight: bold;
 }
-
 
 @media screen and (max-width: 751px) {
-    .text-xl {
+  .text-xl {
     font-size: 16px;
-}
+  }
 
-.text-lg {
+  .text-lg {
     font-size: 12px;
-}
+  }
 }

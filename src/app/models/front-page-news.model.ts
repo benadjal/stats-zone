@@ -1,4 +1,4 @@
 export interface NewsFrontPage {
-    icon : string;
-    text : string
+  icon: string;
+  text: string;
 }

@@ -9,12 +9,15 @@ import { topPlayersMock } from '../../mocks/topPlayers.mock';
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [SearchBarComponent,TopPlayerListComponent, FrontPageComponent,StatsComparatorComponent],
+  imports: [
+    SearchBarComponent,
+    TopPlayerListComponent,
+    FrontPageComponent,
+    StatsComparatorComponent,
+  ],
   templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.scss'
+  styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent {
-
-  playerList : Player[] = topPlayersMock;
-
+  playerList: Player[] = topPlayersMock;
 }

@@ -1,10 +1,10 @@
 <h2>À la une</h2>
 
 <div class="list-news">
-    @for (news of newsFront; track $index) {
+  @for (news of newsFront; track $index) {
     <div class="news-block">
-        <i class="material-icons">{{news.icon}}</i>
-        <span> {{news.text}}</span>
-    </div>  
-    }
+      <i class="material-icons">{{ news.icon }}</i>
+      <span> {{ news.text }}</span>
+    </div>
+  }
 </div>

@@ -8,10 +8,9 @@ describe('StatsComparatorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StatsComparatorComponent]
-    })
-    .compileComponents();
-    
+      imports: [StatsComparatorComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(StatsComparatorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

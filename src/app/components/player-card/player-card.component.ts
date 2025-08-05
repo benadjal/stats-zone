@@ -7,11 +7,8 @@ import { Router, RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './player-card.component.html',
-  styleUrl: './player-card.component.scss'
+  styleUrl: './player-card.component.scss',
 })
 export class PlayerCardComponent {
-
-  @Input() player! : Player;
-
-
+  @Input() player!: Player;
 }

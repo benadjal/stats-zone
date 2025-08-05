@@ -4,8 +4,6 @@ import { App } from './app/app';
 import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
 
+registerLocaleData(fr.default);
 
-registerLocaleData(fr.default)
-
-bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err));
+bootstrapApplication(App, appConfig).catch((err) => console.error(err));

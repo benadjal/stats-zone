@@ -1,7 +1,7 @@
 <h2>Top Joueurs</h2>
 
 <div class="list-top-players">
-    @for (player of topPlayers$ | async; track player.id) {
-        <app-player-card [player]="player"></app-player-card>
-    }
+  @for (player of topPlayers$ | async; track player.id) {
+    <app-player-card [player]="player"></app-player-card>
+  }
 </div>

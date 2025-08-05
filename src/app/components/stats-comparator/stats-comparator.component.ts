@@ -7,10 +7,9 @@ import { Player } from '../../models/player.model';
   standalone: true,
   imports: [SearchBarComponent],
   templateUrl: './stats-comparator.component.html',
-  styleUrl: './stats-comparator.component.scss'
+  styleUrl: './stats-comparator.component.scss',
 })
 export class StatsComparatorComponent {
-
   isPlayerOneSelected: boolean = false;
   isPlayerTwoSelected: boolean = false;
 
@@ -27,8 +26,9 @@ export class StatsComparatorComponent {
     }
   }
 
-  unSelectPlayer(firstOrSecondPlayer : 'playerOne' | 'playerTwo'){
-    firstOrSecondPlayer === 'playerOne' ? this.isPlayerOneSelected = false : this.isPlayerTwoSelected = false
+  unSelectPlayer(firstOrSecondPlayer: 'playerOne' | 'playerTwo') {
+    firstOrSecondPlayer === 'playerOne'
+      ? (this.isPlayerOneSelected = false)
+      : (this.isPlayerTwoSelected = false);
   }
-
 }

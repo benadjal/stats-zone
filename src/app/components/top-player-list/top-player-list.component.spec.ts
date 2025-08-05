@@ -8,10 +8,9 @@ describe('TopPlayersComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TopPlayerListComponent]
-    })
-    .compileComponents();
-    
+      imports: [TopPlayerListComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(TopPlayerListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,22 +1,22 @@
 export interface Player {
-    id : number,
-    name : string,
-    lastName : string,
-    pictureUrl : string,
-    birthDay : Date,
-    position : string,
-    goals : number,
-    assists : number,
-    mark : number,
-    team : string,
-    country : string;
-    contractEndDate : Date,
-    age : number,
-    size : number,
-    bestFoot : string,
-    shirtNumber : number,
-    marketValue : number
-    stats?: PlayerStats
+  id: number;
+  name: string;
+  lastName: string;
+  pictureUrl: string;
+  birthDay: Date;
+  position: string;
+  goals: number;
+  assists: number;
+  mark: number;
+  team: string;
+  country: string;
+  contractEndDate: Date;
+  age: number;
+  size: number;
+  bestFoot: string;
+  shirtNumber: number;
+  marketValue: number;
+  stats?: PlayerStats;
 }
 
 export interface PlayerStats {
@@ -34,17 +34,17 @@ export interface PlayerStats {
     totalShots: number;
     shotsOnTargetPerGame: number;
     bigChancesMissed: number;
-    conversionRate: string;         
+    conversionRate: string;
     penaltyGoals: number;
-    penaltySuccessRate: string;     
+    penaltySuccessRate: string;
     freeKickGoals: number;
-    freeKickGoalPercentage: string; 
-    goalsInsideBox: string;         
-    goalsOutsideBox: string;       
+    freeKickGoalPercentage: string;
+    goalsInsideBox: string;
+    goalsOutsideBox: string;
     headedGoals: number;
     leftFootGoals: number;
     rightFootGoals: number;
-    penaltySuccess: number;      
+    penaltySuccess: number;
   };
   passes: {
     assists: number;
@@ -70,9 +70,9 @@ export interface PlayerStats {
     penaltiesCommitted: number;
   };
 
-  nationalTeamStats : {
-    firstApperences : Date;
-    apperences : number;
-    goals : number;
-  }
+  nationalTeamStats: {
+    firstApperences: Date;
+    apperences: number;
+    goals: number;
+  };
 }

@@ -5,16 +5,14 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './drop-down.component.html',
-  styleUrl: './drop-down.component.scss'
+  styleUrl: './drop-down.component.scss',
 })
 export class DropDownComponent {
-
-  @Input() title : string = "";
+  @Input() title: string = '';
 
   isOpen = false;
 
   toggleDropdown() {
     this.isOpen = !this.isOpen;
   }
-
 }

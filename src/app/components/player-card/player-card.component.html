@@ -1,33 +1,31 @@
 <div class="player-card">
-    <div class="player-picture">
-        <img [src]="player.pictureUrl">
-    </div>
-    <div class="name-and-last-name">
-        <p>{{player.name}} {{player.lastName}}</p>
-    </div>
+  <div class="player-picture">
+    <img [src]="player.pictureUrl" />
+  </div>
+  <div class="name-and-last-name">
+    <p>{{ player.name }} {{ player.lastName }}</p>
+  </div>
 
-    <div class="stats">
-        <div class="goals">
-            <p class="stats-title">Buts</p>
-            <p class="stats-details">{{player.goals}}</p>
-        </div>
-
-        <div class="assists">
-            <p class="stats-title">Passes</p>
-            <p class="stats-details">{{player.assists}}</p>
-        </div>
-
-        <div class="mark">
-            <p class="stats-title">Note</p>
-            <p class="stats-details">{{player.mark}}</p>
-        </div>
+  <div class="stats">
+    <div class="goals">
+      <p class="stats-title">Buts</p>
+      <p class="stats-details">{{ player.goals }}</p>
     </div>
 
-    <div class="check-profil">
-        <button type="button" [routerLink]="['/player-detail', player.id]" >Voir le profil</button>
+    <div class="assists">
+      <p class="stats-title">Passes</p>
+      <p class="stats-details">{{ player.assists }}</p>
     </div>
 
+    <div class="mark">
+      <p class="stats-title">Note</p>
+      <p class="stats-details">{{ player.mark }}</p>
+    </div>
+  </div>
 
-
-
+  <div class="check-profil">
+    <button type="button" [routerLink]="['/player-detail', player.id]">
+      Voir le profil
+    </button>
+  </div>
 </div>

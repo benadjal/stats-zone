@@ -10,17 +10,15 @@ import { DropDownComponent } from '../../components/drop-down/drop-down.componen
 @Component({
   selector: 'app-player-detail-page',
   standalone: true,
-  imports: [AsyncPipe,SearchBarComponent, DatePipe, DropDownComponent],
+  imports: [AsyncPipe, SearchBarComponent, DatePipe, DropDownComponent],
   templateUrl: './player-detail-page.component.html',
-  styleUrl: './player-detail-page.component.scss'
+  styleUrl: './player-detail-page.component.scss',
 })
 export class PlayerDetailPageComponent {
-
   router = inject(ActivatedRoute);
   playerService = inject(PlayersService);
 
-  player$ : Observable<Player> = this.router.params.pipe(
-    switchMap((params) => this.playerService.getPlayerById(+params['id']))
+  player$: Observable<Player> = this.router.params.pipe(
+    switchMap((params) => this.playerService.getPlayerById(+params['id'])),
   );
-
 }

@@ -1,14 +1,12 @@
 <div class="dropdown-container">
   <div class="dropdown-header" (click)="toggleDropdown()">
-    <p>{{title}}</p>
+    <p>{{ title }}</p>
 
-    @if(!isOpen) {
-    <i class="material-icons">keyboard_arrow_down</i>
+    @if (!isOpen) {
+      <i class="material-icons">keyboard_arrow_down</i>
     } @else {
-    <i class="material-icons">keyboard_arrow_up</i>
-
+      <i class="material-icons">keyboard_arrow_up</i>
     }
- 
   </div>
 
   <div class="dropdown-content" [class.open]="!isOpen">

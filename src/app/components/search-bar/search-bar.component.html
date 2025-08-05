@@ -1,38 +1,33 @@
 <div class="search-container">
   <form [formGroup]="searchForm">
-    <input [ngStyle]="{'border-color': color}" type="text" placeholder="Recherchez un joueur"
-      formControlName="search" />
+    <input
+      [ngStyle]="{ 'border-color': color }"
+      type="text"
+      placeholder="Recherchez un joueur"
+      formControlName="search"
+    />
   </form>
 
+  @if (filtredPlayers$ | async; as filtredPlayers) {
+    @if (filtredPlayers.length > 0) {
+      <div class="search-results">
+        @for (player of filtredPlayers; track player.id) {
+          <div class="result-item" (click)="selectPlayer(player)">
+            <div class="result-item-picture">
+              <img [src]="player.pictureUrl" />
+            </div>
 
-  @if(filtredPlayers$ | async; as filtredPlayers){
-  @if(filtredPlayers.length > 0){
-  <div class="search-results">
-    @for(player of filtredPlayers; track player.id){
-
-    <div class="result-item" (click)="selectPlayer(player)">
-      <div class="result-item-picture">
-        <img [src]="player.pictureUrl">
+            <div class="result-item-detail">
+              <div class="result-item-name">
+                <p>{{ player.name }} {{ player.lastName }}</p>
+              </div>
+              <div class="result-item-team">
+                <p>{{ player.team }}</p>
+              </div>
+            </div>
+          </div>
+        }
       </div>
-
-
-      <div class="result-item-detail">
-        <div class="result-item-name">
-          <p>{{ player.name }} {{player.lastName}}</p>
-        </div>
-        <div class="result-item-team">
-          <p>{{player.team}}</p>
-        </div>
-      </div>
-
-
-    </div>
     }
-
-  </div>
   }
-
-  }
-
-
 </div>

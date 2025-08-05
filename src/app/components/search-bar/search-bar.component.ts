@@ -1,8 +1,21 @@
 import { AsyncPipe, NgStyle } from '@angular/common';
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { Player } from '../../models/player.model';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { debounceTime, distinctUntilChanged, Observable, of, startWith, switchMap, tap } from 'rxjs';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  Observable,
+  of,
+  startWith,
+  switchMap,
+  tap,
+} from 'rxjs';
 import { PlayersService } from '../../services/players.service';
 import { Router } from '@angular/router';
 
@@ -11,10 +24,9 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [NgStyle, ReactiveFormsModule, AsyncPipe],
   templateUrl: './search-bar.component.html',
-  styleUrl: './search-bar.component.scss'
+  styleUrl: './search-bar.component.scss',
 })
 export class SearchBarComponent {
-
   @Input() color: string = 'grey';
 
   @Input() mode: 'search' | 'comparePlayerOne' | 'comparePlayerTwo' = 'search';
@@ -26,7 +38,7 @@ export class SearchBarComponent {
   router = inject(Router);
 
   searchForm: FormGroup = new FormGroup({
-    search: new FormControl('', Validators.required)
+    search: new FormControl('', Validators.required),
   });
 
   filtredPlayers$: Observable<Player[]> = this.getPlayerList();
@@ -35,17 +47,15 @@ export class SearchBarComponent {
     return this.searchForm.get('search')!.valueChanges.pipe(
       debounceTime(300),
       distinctUntilChanged(),
-      switchMap((search) => this.playerService.getFilteredPlayers(search))
-    )
+      switchMap((search) => this.playerService.getFilteredPlayers(search)),
+    );
   }
 
   selectPlayer(player: Player): void {
     if (this.mode === 'search') {
       this.router.navigate(['player-detail', player.id]);
-    }
-    else {
+    } else {
       this.playerSelected.emit({ player: player, mode: this.mode });
     }
   }
-
 }

@@ -3,7 +3,7 @@
   border-radius: 8px;
   margin-top: 5px;
   overflow: hidden;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   color: white;
 }
 
@@ -49,8 +49,7 @@ i {
   font-size: x-large;
 }
 
-
-@media screen and (max-width : 751px) {
+@media screen and (max-width: 751px) {
   .dropdown-header {
     font-size: 15px;
   }

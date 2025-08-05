@@ -1,96 +1,96 @@
 .search-bar {
-    width: 40%;
-    margin: 0 auto;
+  width: 40%;
+  margin: 0 auto;
 }
 
 .main-detailed-page-container {
-    margin-top: 2%;
+  margin-top: 2%;
 }
 
 .player-detail-container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 3%;
-    animation: fadeIn 0.5s ease-in-out;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3%;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .player-essential-informations {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  gap: 25px;
+  padding: 1%;
+
+  .player-picture {
+    margin-top: 2%;
+
+    img {
+      border-radius: 50%;
+      width: 130px;
+    }
+  }
+
+  .player-name-team-contrat {
     display: flex;
-    align-items: center;
-    width: 40%;
-    gap: 25px;
-    padding: 1%;
-
-    .player-picture {
-        margin-top: 2%;
-
-        img {
-            border-radius: 50%;
-            width: 130px;
-        }
-    }
-
-    .player-name-team-contrat {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 2%;
-    }
+    flex-direction: column;
+    margin-bottom: 2%;
+  }
 }
 
 .player-market-value {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #00FF57;
-    width: 30%;
-    border-radius: 10px;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #00ff57;
+  width: 30%;
+  border-radius: 10px;
+  gap: 20px;
 
-    span {
-        margin: 1% 0 1% 0;
-    }
+  span {
+    margin: 1% 0 1% 0;
+  }
 }
 
 .player-more-details {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    border: 1px solid #00FF57;
-    border-radius: 10px;
-    width: 85%;
-    margin: auto;
-    margin-top: 3%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  border: 1px solid #00ff57;
+  border-radius: 10px;
+  width: 85%;
+  margin: auto;
+  margin-top: 3%;
 }
 
 .detail {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1% 1% 1% 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1% 1% 1% 1%;
 }
 
 .attributs-and-national-stats {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    //   margin: 2% 0;
-    margin: auto;
-    width: 87%;
-    //   background-color: aquamarine;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  //   margin: 2% 0;
+  margin: auto;
+  width: 87%;
+  //   background-color: aquamarine;
+  gap: 20px;
 }
 
 .attibuts,
 .national-team-stats {
-    flex: 1 1 350px;
-    max-width: 48%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2% 0 2% 0;
+  flex: 1 1 350px;
+  max-width: 48%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2% 0 2% 0;
 }
 
 // .attibuts {
@@ -103,52 +103,51 @@
 
 .attibuts img,
 .national-team-stats img {
-    margin: 2% 0;
-    width: 65%;
-    height: auto;
+  margin: 2% 0;
+  width: 65%;
+  height: auto;
 }
 
 .attibuts span,
 .national-team-stats span {
-    margin: 2% 0 1% 0;
+  margin: 2% 0 1% 0;
 }
 
 #seaonTitle {
-    text-align: center;
-    margin: 2% 0 1% 0;
+  text-align: center;
+  margin: 2% 0 1% 0;
 }
 
-
 .national-team {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 
-    img {
-        width: 30%;
-    }
+  img {
+    width: 30%;
+  }
 }
 
 .detailed-stats {
-    width: 85%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .national-team-apperances-and-goals {
-    display: flex;
-    justify-content: space-between;
-    width: 60%;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
 }
 
 .national-team-appearances,
 .national-team-goals {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .season-heat-map,
@@ -156,90 +155,84 @@
 .attack,
 .defense,
 .passes {
-    width: 90%;
+  width: 90%;
 
-    p {
-        display: flex;
-        justify-content: space-between;
-    }
+  p {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .season-heat-map {
-    img {
-        width: 40%;
-        margin: auto;
-        margin-bottom: 2%;
-        margin-top: 2%;
-    }
+  img {
+    width: 40%;
+    margin: auto;
+    margin-bottom: 2%;
+    margin-top: 2%;
+  }
 }
 
 @media screen and (max-width: 912px) {
-    .national-team {
-        img {
-            width: 70px;
-        }
-    }
-
-    .season-heat-map {
+  .national-team {
     img {
-        width: 90%;
+      width: 70px;
     }
-}
-}
+  }
 
-
+  .season-heat-map {
+    img {
+      width: 90%;
+    }
+  }
+}
 
 @media screen and (max-width: 751px) {
+  .player-detail-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 
-    .player-detail-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+  .player-more-details {
+    flex-direction: column;
+  }
+
+  .detail {
+    margin: 2% 0 4% 0;
+  }
+
+  .player-essential-informations,
+  .player-market-value {
+    margin-bottom: 2%;
+
+    padding: 0;
+    width: 85%;
+  }
+
+  .player-essential-informations {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .player-picture img {
+      width: 100px;
     }
+  }
 
-    .player-more-details {
-        flex-direction: column;
-    }
-
-    .detail {
-        margin: 2% 0 4% 0;
-    }
-
-    .player-essential-informations,
-    .player-market-value {
-        margin-bottom: 2%;
-
-        padding: 0;
-        width: 85%;
-    }
-
-    .player-essential-informations {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-
-        .player-picture img {
-            width: 100px;
-        }
-    }
-
-    .search-bar {
-        width: 80%;
-    }
+  .search-bar {
+    width: 80%;
+  }
 }
 
+@media screen and (max-width: 571px) {
+  .attributs-and-national-stats {
+    width: 90%;
+    margin-top: 6%;
+  }
 
-@media screen and (max-width : 571px) {
-
-    .attributs-and-national-stats {
-        width: 90%;
-        margin-top: 6%;
-
-    }
-
-    .attibuts,
-    .national-team-stats {
-        max-width: 95%;
-        padding: 2%;
-    }
+  .attibuts,
+  .national-team-stats {
+    max-width: 95%;
+    padding: 2%;
+  }
 }
