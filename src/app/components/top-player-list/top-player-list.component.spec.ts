@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CompareStatsComponent } from './compare-stats.component';
+import { TopPlayerListComponent } from './top-player-list.component';
 
-describe('CompareStatsComponent', () => {
-  let component: CompareStatsComponent;
-  let fixture: ComponentFixture<CompareStatsComponent>;
+describe('TopPlayersComponent', () => {
+  let component: TopPlayerListComponent;
+  let fixture: ComponentFixture<TopPlayerListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CompareStatsComponent]
+      imports: [TopPlayerListComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(CompareStatsComponent);
+    fixture = TestBed.createComponent(TopPlayerListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

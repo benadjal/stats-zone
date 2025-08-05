@@ -6,10 +6,10 @@ import { Player } from '../../models/player.model';
   selector: 'app-compare-stats',
   standalone: true,
   imports: [SearchBarComponent],
-  templateUrl: './compare-stats.component.html',
-  styleUrl: './compare-stats.component.scss'
+  templateUrl: './stats-comparator.component.html',
+  styleUrl: './stats-comparator.component.scss'
 })
-export class CompareStatsComponent {
+export class StatsComparatorComponent {
 
   isPlayerOneSelected: boolean = false;
   isPlayerTwoSelected: boolean = false;

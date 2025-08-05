@@ -9,10 +9,10 @@ import { PlayerCardComponent } from '../player-card/player-card.component';
   selector: 'app-top-players',
   standalone: true,
   imports: [AsyncPipe, PlayerCardComponent],
-  templateUrl: './top-players.component.html',
-  styleUrl: './top-players.component.scss'
+  templateUrl: './top-player-list.component.html',
+  styleUrl: './top-player-list.component.scss'
 })
-export class TopPlayersComponent {
+export class TopPlayerListComponent {
 
   playerService = inject(PlayersService);
 
