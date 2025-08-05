@@ -15,7 +15,7 @@
         <span class="text text-lg">{{ player.position }}</span>
         <span class="text text-xl">{{ player.team }}</span>
         <span class="text text-lg text-muted">
-          Contrat jusqu'au : {{ player.contractEndDate | date: 'dd MMMM, yyyy' }}
+          Contrat jusqu'au : {{ player.contractEndDate | date }}
         </span>
       </div>
     </div>
@@ -33,7 +33,7 @@
     </div>
 
     <div class="detail">
-      <span class="text text-lg text-muted">{{player.birthDay| date: 'dd MMMM yyyy'}}</span>
+      <span class="text text-lg text-muted">{{player.birthDay| date}}</span>
       <span class="text-xl text-bold">{{ player.age }} ans</span>
     </div>
     <div class="detail">
@@ -67,8 +67,7 @@
         <img src="assets/flag.png">
         <div class="national-team-name-and-start">
           <p class="text text-xl">{{player.country}}</p>
-          <p class="text text-lg text-muted">Début le : {{player.stats?.nationalTeamStats?.firstApperences | date : 'dd
-            MMMM, yyyy'}}</p>
+          <p class="text text-lg text-muted">Début le : {{player.stats?.nationalTeamStats?.firstApperences | date}}</p>
         </div>
       </div>
 
