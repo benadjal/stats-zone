@@ -18,11 +18,13 @@ import {
 } from 'rxjs';
 import { PlayersService } from '../../services/players.service';
 import { Router } from '@angular/router';
+import { InputTextModule } from 'primeng/inputtext';
+import { FloatLabelModule } from 'primeng/floatlabel';
 
 @Component({
   selector: 'app-search-bar',
   standalone: true,
-  imports: [NgStyle, ReactiveFormsModule, AsyncPipe],
+  imports: [ReactiveFormsModule, AsyncPipe,InputTextModule,FloatLabelModule],
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.scss',
 })

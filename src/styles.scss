@@ -1,50 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
-html {
-  background-color: black;
-}
+// /* You can add global styles to this file, and also import other style files */
+// html {
+//   background-color: black;
+// }
 
-.border-green-rounded {
-  border: 1px solid #00ff57;
-  border-radius: 10px;
-}
+// .border-green-rounded {
+//   border: 1px solid #00ff57;
+//   border-radius: 10px;
+// }
 
 .text {
   font-family: "Orbitron";
-  color: white;
+//   color: white;
 }
 
-.text-xl {
-  font-size: 24px;
-}
 
-.text-lg {
-  font-size: 18px;
-}
+// .text-xl {
+//   font-size: 24px;
+// }
 
-.text-bold {
-  font-weight: bold;
-}
+// .text-lg {
+//   font-size: 18px;
+// }
 
-.text-muted {
-  color: rgb(213, 190, 190);
-}
+// .text-bold {
+//   font-weight: bold;
+// }
 
-.text-accent {
-  color: #00ff57;
-}
+// .text-muted {
+//   color: rgb(213, 190, 190);
+// }
 
-.text-value {
-  color: green;
-  font-size: 30px;
-  font-weight: bold;
-}
+// .text-accent {
+//   color: #00ff57;
+// }
 
-@media screen and (max-width: 751px) {
-  .text-xl {
-    font-size: 16px;
-  }
+// .text-value {
+//   color: green;
+//   font-size: 30px;
+//   font-weight: bold;
+// }
 
-  .text-lg {
-    font-size: 12px;
-  }
-}
+// @media screen and (max-width: 751px) {
+//   .text-xl {
+//     font-size: 16px;
+//   }
+
+//   .text-lg {
+//     font-size: 12px;
+//   }
+// }
