@@ -31,15 +31,23 @@ span {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid #00ff57;
   width: 350px;
   height: 120px;
-  border-radius: 10px;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
   margin-bottom: 2%;
 }
+
+
+//Pas recommandé par primeng
+:host ::ng-deep .p-card-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+
 
 .news-block:hover {
   transform: scale(1.1);

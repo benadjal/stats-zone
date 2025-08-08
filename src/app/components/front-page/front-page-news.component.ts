@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { NewsFrontPage } from '../../models/front-page-news.model';
+import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-front-page',
   standalone: true,
-  imports: [],
+  imports: [CardModule],
   templateUrl: './front-page-news.component.html',
   styleUrl: './front-page-news.component.scss',
 })
