@@ -51,4 +51,34 @@ export const MyPreset = definePreset(Aura, {
             },
         }
     },
+    components: {
+        inputtext: {
+            colorScheme: {
+                light: {
+                    root: {
+                    },
+                },
+                dark: {
+                    root: {
+                        borderColor: '{primary.500}',
+                        invalidBorderColor: '{primary.500}',
+                        borderRadius : '10px'
+                    }
+                }
+            }
+        },
+        floatlabel: {
+            colorScheme: {
+                light: {
+                    root: {
+                    },
+                },
+                dark: {
+                    root: {
+                        invalidColor: '{surface.400}',
+                    }
+                }
+            }
+        }
+    }
 });
