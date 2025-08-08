@@ -1,31 +1,27 @@
 .player-card {
-  color: white;
   font-family: "Orbitron";
-  width: 230px;
-  border-color: aqua;
-  border-width: 2px;
+  width: 250px;
   border: 1px solid #00ff57;
-  border-radius: 6px;
-  margin-top: 15%;
-  transition:
-    transform 0.1s ease,
-    box-shadow 0.1s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2%;
+  transition: transform 0.3s ease, box-shadow 0.1s ease;
 }
 
 .player-card:hover {
   transform: scale(1.05);
   box-shadow: 0 30px 40px rgba(0, 255, 87, 0.3);
+
 }
 
 .player-picture {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 10%;
-
-  img {
-    border-radius: 50%;
-    width: 50%;
-  }
+  border-radius: 50%;
+  width: 92%;
 }
 
 .name-and-last-name {
@@ -38,33 +34,13 @@
 
 .stats {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
 .check-profil {
-  @extend .stats;
-  margin-bottom: 5%;
-  cursor: pointer;
-
-  button {
-    color: white;
-    background-color: black;
-    border: 1px solid #00ff57;
-    width: 80%;
-    height: 35px;
-    border-radius: 10px;
-    font-family: "Orbitron";
-    font-weight: bold;
-    font-size: medium;
-    cursor: pointer;
-  }
-}
-
-.check-profil:hover {
-  button {
-    background-color: #1e5a32;
-  }
+  display: flex;
+  justify-content: center;
 }
 
 .goals,

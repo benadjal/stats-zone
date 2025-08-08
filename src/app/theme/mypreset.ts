@@ -20,33 +20,33 @@ export const MyPreset = definePreset(Aura, {
             light: {
                 surface: {
                     0: '#ffffff',
-                    50: '{zinc.50}',
-                    100: '{zinc.100}',
-                    200: '{zinc.200}',
-                    300: '{zinc.300}',
-                    400: '{zinc.400}',
-                    500: '{zinc.500}',
-                    600: '{zinc.600}',
-                    700: '{zinc.700}',
-                    800: '{zinc.800}',
-                    900: '{zinc.900}',
-                    950: '{zinc.950}'
+                    50: '{emerald.50}',
+                    100: '{emerald.100}',
+                    200: '{emerald.200}',
+                    300: '{emerald.300}',
+                    400: '{emerald.400}',
+                    500: '{emerald.500}',
+                    600: '{emerald.600}',
+                    700: '{emerald.700}',
+                    800: '{emerald.800}',
+                    900: '{emerald.900}',
+                    950: '{emerald.950}'
                 }
             },
             dark: {
                 surface: {
                     0: '#ffffff',
-                    50: '{slate.50}',
-                    100: '{slate.100}',
-                    200: '{slate.200}',
-                    300: '{slate.300}',
-                    400: '{slate.400}',
-                    500: '{slate.500}',
-                    600: '{slate.600}',
-                    700: '{slate.700}',
-                    800: '{slate.800}',
-                    900: '{slate.900}',
-                    950: '{slate.950}'
+                    50: '{stone.50}',
+                    100: '{stone.100}',
+                    200: '{stone.200}',
+                    300: '{stone.300}',
+                    400: '{stone.400}',
+                    500: '{stone.500}',
+                    600: '{stone.600}',
+                    700: '{stone.700}',
+                    800: '{stone.800}',
+                    900: '{stone.900}',
+                    950: '{stone.950}'
                 }
             },
         }
@@ -79,6 +79,16 @@ export const MyPreset = definePreset(Aura, {
                     }
                 }
             }
-        }
+        },
+
+        // card: {
+        //     colorScheme: {
+        //         light: {
+        //             root : {
+        //                 background : '{primary.50}'
+        //             }
+        //         }
+        //     }
+        // }
     }
 });
