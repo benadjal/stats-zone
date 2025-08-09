@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { Player } from '../../models/player.model';
+import { CardModule } from 'primeng/card';
+import { DividerModule } from 'primeng/divider';
+import { ButtonModule } from "primeng/button";
 
 @Component({
   selector: 'app-compare-stats',
   standalone: true,
-  imports: [SearchBarComponent],
+  imports: [SearchBarComponent, CardModule, DividerModule, ButtonModule],
   templateUrl: './stats-comparator.component.html',
   styleUrl: './stats-comparator.component.scss',
 })

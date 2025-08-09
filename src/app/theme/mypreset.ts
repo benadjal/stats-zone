@@ -81,14 +81,19 @@ export const MyPreset = definePreset(Aura, {
             }
         },
 
-        // card: {
-        //     colorScheme: {
-        //         light: {
-        //             root : {
-        //                 background : '{primary.50}'
-        //             }
-        //         }
-        //     }
-        // }
+        card: {
+            colorScheme: {
+                // light: {
+                //     root : {
+                //         // background : '{primary.50}'
+                //     },
+                // },
+                dark : {
+                    root : {
+                        background : '{surface.900}'
+                    }
+                }
+            }
+        }
     }
 });

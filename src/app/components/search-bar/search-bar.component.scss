@@ -1,10 +1,22 @@
 .search-container {
   position: relative;
   max-width: 600px;
+  font-family: "Orbitron";
+
 }
 
 input {
   width: 100%;
+}
+
+:host ::ng-deep .p-floatlabel:not(.p-filled) label {
+  width: 100%;
+  text-align: center;
+}
+
+:host ::ng-deep .p-floatlabel:has(.p-inputtext:focus) label {
+  width: auto;
+  text-align: left;
 }
 
 .search-results {
@@ -46,13 +58,11 @@ input {
 
 .result-item-name {
   color: white;
-  font-family: "Orbitron";
   font-size: 100%;
 }
 
 .result-item-team {
   color: white;
-  font-family: "Orbitron";
   font-size: 90%;
 }
 

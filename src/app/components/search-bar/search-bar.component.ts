@@ -29,7 +29,6 @@ import { FloatLabelModule } from 'primeng/floatlabel';
   styleUrl: './search-bar.component.scss',
 })
 export class SearchBarComponent {
-  @Input() color: string = 'grey';
 
   @Input() mode: 'search' | 'comparePlayerOne' | 'comparePlayerTwo' = 'search';
 
