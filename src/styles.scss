@@ -10,47 +10,48 @@
 
 .text {
   font-family: "Orbitron";
-//   color: white;
+  color: white;
 }
 
 
-// .text-xl {
-//   font-size: 24px;
-// }
+.text-xl {
+  font-size: 24px;
+}
 
-// .text-lg {
-//   font-size: 18px;
-// }
+.text-lg {
+  font-size: 18px;
+}
 
-// .text-bold {
-//   font-weight: bold;
-// }
+.text-bold {
+  font-weight: bold;
+}
 
-// .text-muted {
-//   color: rgb(213, 190, 190);
-// }
+.text-muted {
+  color: rgb(213, 190, 190);
+}
 
-// .text-accent {
-//   color: #00ff57;
-// }
+.text-accent {
+  color: #00ff57;
+}
 
-// .text-value {
-//   color: green;
-//   font-size: 30px;
-//   font-weight: bold;
-// }
+.text-value {
+  color: green;
+  font-size: 30px;
+  font-weight: bold;
+}
 
-// @media screen and (max-width: 751px) {
-//   .text-xl {
-//     font-size: 16px;
-//   }
+@media screen and (max-width: 751px) {
+  .text-xl {
+    font-size: 16px;
+  }
 
-//   .text-lg {
-//     font-size: 12px;
-//   }
-// }
+  .text-lg {
+    font-size: 12px;
+  }
+}
 
 
 .card-border {
     border: 1px solid #00ff57;
+    border-radius: 10px;
 }

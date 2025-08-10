@@ -11,15 +11,10 @@
   display: flex;
   justify-content: space-around;
   margin-top: 3%;
-  animation: fadeIn 0.5s ease-in-out;
 }
 
 .player-essential-informations {
-  display: flex;
-  align-items: center;
   width: 40%;
-  gap: 25px;
-  padding: 1%;
 
   .player-picture {
     margin-top: 2%;
@@ -29,38 +24,50 @@
       width: 130px;
     }
   }
+}
 
-  .player-name-team-contrat {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2%;
-  }
+.player-essential-informations-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.player-name-team-contrat {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2%;
 }
 
 .player-market-value {
+  width: 30%;
+}
+
+.market-value-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid #00ff57;
-  width: 30%;
-  border-radius: 10px;
-  gap: 20px;
+  gap: 50px;
 
   span {
     margin: 1% 0 1% 0;
   }
 }
 
+
+
 .player-more-details {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  border: 1px solid #00ff57;
-  border-radius: 10px;
   width: 85%;
   margin: auto;
   margin-top: 3%;
+}
+
+.player-more-details-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .detail {
@@ -75,10 +82,8 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  //   margin: 2% 0;
   margin: auto;
   width: 87%;
-  //   background-color: aquamarine;
   gap: 20px;
 }
 
@@ -90,16 +95,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2% 0 2% 0;
+  margin-top: 2%
 }
 
-// .attibuts {
-//   background-color: olivedrab;
-// }
+:host ::ng-deep .attibuts-card-content .p-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
 
-// .national-team-stats {
-//   background-color: antiquewhite;
-// }
 
 .attibuts img,
 .national-team-stats img {
@@ -121,6 +126,8 @@
 .national-team {
   display: flex;
   gap: 30px;
+  padding-top: 4%;
+
 
   img {
     width: 30%;
@@ -134,6 +141,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2%;
 }
 
 .national-team-apperances-and-goals {

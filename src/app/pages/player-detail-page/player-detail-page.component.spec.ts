@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PlayerDetailPageComponent } from './player-detail-page.component';
+import { CardModule } from 'primeng/card';
 
 describe('PlayerDetailPageComponent', () => {
   let component: PlayerDetailPageComponent;
@@ -8,7 +9,7 @@ describe('PlayerDetailPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PlayerDetailPageComponent],
+      imports: [PlayerDetailPageComponent,CardModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PlayerDetailPageComponent);

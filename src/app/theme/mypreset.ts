@@ -90,7 +90,7 @@ export const MyPreset = definePreset(Aura, {
                 // },
                 dark : {
                     root : {
-                        background : '{surface.900}'
+                        background : '{surface.950}'
                     }
                 }
             }
