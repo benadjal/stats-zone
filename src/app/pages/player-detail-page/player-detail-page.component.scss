@@ -55,8 +55,6 @@
   }
 }
 
-
-
 .player-more-details {
   width: 85%;
   margin: auto;
@@ -134,6 +132,17 @@
   }
 }
 
+.accordion-data {
+  width: 70%;
+  font-family: 'Orbitron';
+  margin-bottom: 2%;
+}
+
+.heat-map {
+  display: flex;
+  justify-content: center;
+}
+
 .detailed-stats {
   width: 85%;
   margin: auto;
@@ -158,25 +167,18 @@
   align-items: center;
 }
 
-.season-heat-map,
-.games,
-.attack,
-.defense,
-.passes {
-  width: 90%;
 
+.accordion-content {
   p {
     display: flex;
     justify-content: space-between;
   }
 }
 
-.season-heat-map {
-  img {
-    width: 40%;
-    margin: auto;
-    margin-bottom: 2%;
-    margin-top: 2%;
+p-accordion {
+  margin-bottom: 22%;
+  p {
+    margin: 0;
   }
 }
 
@@ -184,12 +186,6 @@
   .national-team {
     img {
       width: 70px;
-    }
-  }
-
-  .season-heat-map {
-    img {
-      width: 90%;
     }
   }
 }

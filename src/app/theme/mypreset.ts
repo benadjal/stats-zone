@@ -94,6 +94,15 @@ export const MyPreset = definePreset(Aura, {
                     }
                 }
             }
+        },
+        accordion: {
+            colorScheme : {
+                dark : {
+                    panel : {
+                        borderWidth : '1px'
+                    }
+                }
+            }
         }
     }
 });
