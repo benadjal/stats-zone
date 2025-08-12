@@ -5,14 +5,14 @@ import { Observable, switchMap } from 'rxjs';
 import { Player } from '../../models/player.model';
 import { AsyncPipe, DatePipe } from '@angular/common';
 import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
-import { DropDownComponent } from '../../components/drop-down/drop-down.component';
 import { CardModule } from 'primeng/card';
 import { AccordionModule } from 'primeng/accordion';
+import { RadarChartComponent } from '../../components/charts/radar-chart/radar-chart.component';
 
 @Component({
   selector: 'app-player-detail-page',
   standalone: true,
-  imports: [AsyncPipe, SearchBarComponent, DatePipe, AccordionModule,CardModule],
+  imports: [AsyncPipe, SearchBarComponent, DatePipe, AccordionModule,CardModule,RadarChartComponent],
   templateUrl: './player-detail-page.component.html',
   styleUrl: './player-detail-page.component.scss',
 })
