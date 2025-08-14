@@ -20,7 +20,7 @@ export class PlayerDetailPageComponent {
   router = inject(ActivatedRoute);
   playerService = inject(PlayersService);
 
-  player$: Observable<Player> = this.router.params.pipe(
-    switchMap((params) => this.playerService.getPlayerById(+params['id'])),
-  );
+  // player$: Observable<Player> = this.router.params.pipe(
+    // switchMap((params) => this.playerService.getPlayerById(+params['id'])),
+  // );
 }

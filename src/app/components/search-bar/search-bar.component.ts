@@ -47,11 +47,11 @@ export class SearchBarComponent {
     search: new FormControl('', {nonNullable: true, validators: Validators.required}),
   });
 
-  filtredPlayers$: Observable<Player[]> = this.searchForm.controls.search.valueChanges.pipe(
-    debounceTime(300),
-    distinctUntilChanged(),
-    switchMap((search) => this.playerService.getFilteredPlayers(search)),
-  );
+  // filtredPlayers$: Observable<Player[]> = this.searchForm.controls.search.valueChanges.pipe(
+  //   debounceTime(300),
+  //   distinctUntilChanged(),
+  //   switchMap((search) => this.playerService.getFilteredPlayers(search)),
+  // );
 
   selectPlayer(player: Player): void {
     if (this.mode === 'search') {
