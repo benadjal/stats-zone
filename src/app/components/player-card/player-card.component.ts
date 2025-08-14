@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Player } from '../../models/player.model';
-import { Router, RouterLink } from '@angular/router';
+import { TopPlayer } from '../../models/player.model';
+import { RouterLink } from '@angular/router';
 
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
@@ -13,5 +13,7 @@ import { ButtonModule } from 'primeng/button';
   styleUrl: './player-card.component.scss',
 })
 export class PlayerCardComponent {
-  @Input() player!: Player;
+  @Input() player!: TopPlayer;
+
+  
 }

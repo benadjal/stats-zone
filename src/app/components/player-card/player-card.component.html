@@ -1,8 +1,8 @@
 <p-card class="player-card card-border">
   <ng-template #header>
-    <img alt="Card" class="player-picture" [src]="player.pictureUrl"/>
+    <img alt="Card" class="player-picture" [src]="player.playerData.photo"/>
   </ng-template>
-  <ng-template #title> {{player.name}} {{player.lastName}} </ng-template>
+  <ng-template #title> <p class="player-name">{{player.playerData.name}}</p> </ng-template>
   <div class="stats">
     <div class="goals">
       <p class="stats-title">Buts</p>
@@ -14,14 +14,14 @@
       <p class="stats-details">{{ player.assists }}</p>
     </div>
 
-    <div class="mark">
+    <!-- <div class="mark">
       <p class="stats-title">Note</p>
       <p class="stats-details">{{ player.mark }}</p>
-    </div>
+    </div> -->
   </div>
   <ng-template #footer>
     <div class="check-profil">
-      <p-button label="Voir le profil" [routerLink]="['player-detail',player.id]" />
+      <p-button label="Voir le profil" [routerLink]="['player-detail',player.playerData.id]" />
     </div>
   </ng-template>
 </p-card>

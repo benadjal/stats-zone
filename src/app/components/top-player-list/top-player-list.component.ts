@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { PlayersService } from '../../services/players.service';
 import { Observable } from 'rxjs';
-import { Player } from '../../models/player.model';
+import { TopPlayer } from '../../models/player.model';
 import { AsyncPipe } from '@angular/common';
 import { PlayerCardComponent } from '../player-card/player-card.component';
+import { FootballApiService } from '../../services/football-api.service';
 
 @Component({
   selector: 'app-top-players',
@@ -14,6 +15,8 @@ import { PlayerCardComponent } from '../player-card/player-card.component';
 })
 export class TopPlayerListComponent {
   playerService = inject(PlayersService);
+  foorballService = inject(FootballApiService);
 
-  topPlayers$: Observable<Player[]> = this.playerService.getTopPlayers();
+  topPlayers$: Observable<TopPlayer[]> = this.foorballService.getTopPlayers();
+
 }
