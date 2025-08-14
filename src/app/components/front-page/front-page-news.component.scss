@@ -3,7 +3,6 @@ h2 {
   font-family: "Orbitron";
   font-size: 27px;
   margin-bottom: 0;
-  margin-top: 2%;
 }
 
 .material-icons {
@@ -24,7 +23,6 @@ span {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-top: 2%;
 }
 
 .news-block {
@@ -59,7 +57,6 @@ span {
 
 @media screen and (max-width: 1131px) {
   h2 {
-    margin-top: 4%;
     text-align: center;
   }
 }
