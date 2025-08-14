@@ -2,7 +2,7 @@
 
 <div class="compare-stats-container">
   <p-card class="compare-stats-card card-border">
-    @if (!isPlayerOneSelected) {
+    @if (!playerOne) {
     <app-search-bar class="search-bar-player" [mode]="'comparePlayerOne'"
       (playerSelected)="selectPlayer($event)"></app-search-bar>
     } @else {
@@ -27,7 +27,7 @@
       <p-divider type="solid"><b>VS</b></p-divider>
     </div>
 
-    @if (!isPlayerTwoSelected) {
+    @if (!playerTwo) {
     <app-search-bar class="search-bar-player" [mode]="'comparePlayerTwo'"
       (playerSelected)="selectPlayer($event)"></app-search-bar>
     } @else {

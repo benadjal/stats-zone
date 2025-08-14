@@ -2,9 +2,11 @@
 
 <div class="list-news">
   @for (news of newsFront; track $index) {
-  <p-card class="card-border news-block" >
+  <p-card class="card-border news-block">
+    <div class="card-content">
     <i class="material-icons">{{ news.icon }}</i>
     <span> {{ news.text }}</span>
+    </div>
   </p-card>
   }
 </div>

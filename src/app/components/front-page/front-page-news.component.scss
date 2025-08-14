@@ -39,16 +39,6 @@ span {
   margin-bottom: 2%;
 }
 
-
-//Pas recommandé par primeng
-:host ::ng-deep .p-card-content {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 20px;
-}
-
-
 .news-block:hover {
   transform: scale(1.1);
   background-color: #003b14;

@@ -7,7 +7,7 @@
   <div class="player-detail-container">
     <div class="player-essential-informations card-border">
       <p-card>
-        <ng-template pTemplate="content">
+        <ng-template #content>
           <div class="player-essential-informations-content">
             <div class="player-picture">
               <img [src]="player.pictureUrl" [alt]="player.name + ' ' + player.lastName" />
@@ -29,7 +29,7 @@
 
     <div class="player-market-value card-border">
       <p-card>
-        <ng-template pTemplate="content">
+        <ng-template #content>
           <div class="market-value-content">
             <span class="text text-bold text-xl">Valeur marchande</span>
             <span class="text text-value">{{ player.marketValue }}M €</span>
