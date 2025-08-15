@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PlayerSelection, SearchBarComponent } from '../search-bar/search-bar.component';
-import { Player } from '../../models/player.model';
+import { PlayerData } from '../../models/player.model';
 import { CardModule } from 'primeng/card';
 import { DividerModule } from 'primeng/divider';
 import { ButtonModule } from "primeng/button";
@@ -12,8 +12,8 @@ import { ButtonModule } from "primeng/button";
   styleUrl: './stats-comparator.component.scss',
 })
 export class StatsComparatorComponent {
-  playerOne?: Player;
-  playerTwo?: Player;
+  playerOne?: PlayerData;
+  playerTwo?: PlayerData;
 
   selectPlayer(playerSelection: PlayerSelection) {
     if (playerSelection.mode === 'comparePlayerOne') {

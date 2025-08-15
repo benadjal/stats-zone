@@ -1,28 +1,19 @@
 import { AsyncPipe, NgStyle } from '@angular/common';
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
-import { Player } from '../../models/player.model';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import {
-  debounceTime,
-  distinctUntilChanged,
-  Observable,
-  of,
-  startWith,
-  switchMap,
-  tap,
-} from 'rxjs';
 import { PlayersService } from '../../services/players.service';
 import { Router } from '@angular/router';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
+import { PlayerData } from '../../models/player.model';
 
 export interface PlayerSelection {
-  player: Player;
+  player: PlayerData;
   mode: SearchBarMode
 }
 
@@ -53,7 +44,7 @@ export class SearchBarComponent {
   //   switchMap((search) => this.playerService.getFilteredPlayers(search)),
   // );
 
-  selectPlayer(player: Player): void {
+  selectPlayer(player: any): void {
     if (this.mode === 'search') {
       this.searchForm.controls.search.reset();
       this.router.navigate(['player-detail', player.id]);

@@ -1,14 +1,7 @@
-
-
-export interface Player {
-  player: Player;
-  statistics: Statistic[];
-}
-
 export interface TopPlayer {
-  playerData : Player;
-  goals : number;
-  assists : number;
+  playerData: PlayerData;
+  goals: number;
+  assists: number;
 }
 
 export interface PlayersApiResponse {
@@ -31,11 +24,42 @@ export interface Paging {
 }
 
 export interface PlayerWithStatistics {
-  player: Player;
+  player: PlayerData;
   statistics: Statistic[];
 }
 
-export interface Player {
+
+export interface PlayerDetails extends PlayerWithStatistics {
+  computed: PlayerComputedData
+}
+
+export interface PlayerComputedData {
+  goalsWithNationalTeam: number;
+  assistsWithNationalTeam: number;
+  nationalTeamStats: Statistic[];
+  appearences: number;
+  lineups: number;
+  minutes: number;
+
+  goals: number;
+  assists: number;
+  shots: number;
+  shotsOn: number;
+  penaltyScored: number;
+
+  totalPasses: number;
+  keyPasses: number;
+
+  totalDuel: number;
+  duelWon: number;
+  tackles: number;
+  interceptions: number;
+  foulsCommited: number;
+  foolsDrawn: number;
+  leagueData : League
+}
+
+export interface PlayerData {
   id: number;
   name: string;
   firstname: string;
@@ -87,7 +111,7 @@ export interface League {
 }
 
 export interface Games {
-  appearences: number; 
+  appearences: number;
   lineups: number;
   minutes: number;
   number: number | null;

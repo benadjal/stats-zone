@@ -1,8 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { Player } from '../models/player.model';
-import { topPlayersMock } from '../mocks/topPlayers.mock';
-import { allPlayers } from '../mocks/allPlayers.mock';
 
 @Injectable({
   providedIn: 'root',

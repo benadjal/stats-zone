@@ -1,0 +1,184 @@
+<div class="main-detailed-page-container">
+    @if (player$ | async; as player) {
+    <div class="search-bar">
+        <app-search-bar></app-search-bar>
+    </div>
+
+    <div class="player-detail-container">
+        <div class="player-essential-informations card-border">
+            <p-card>
+                <ng-template #content>
+                    <div class="player-essential-informations-content">
+                        <div class="player-picture">
+                            <img [src]="player.player.photo" [alt]="player.player.name" />
+                        </div>
+
+                        <div class="player-name-team-contrat">
+                            <span class="text text-xl text-bold">{{ player.player.firstname }}</span>
+                            <span class="text text-xl text-bold">{{ player.player.lastname }}</span>
+                            <span class="text text-bold">{{ player.statistics[0].games.position }}</span>
+                            <span class="text">{{ player.player.nationality }} - {{ player.statistics[0].team.name }}
+                            </span>
+                        </div>
+
+                    </div>
+                </ng-template>
+            </p-card>
+        </div>
+
+        <div class="player-market-value card-border">
+            <p-card>
+                <ng-template #content>
+                    <div class="market-value-content">
+                        <span class="text text-bold text-xl">{{player.computed.leagueData.name}}</span>
+                        <div class="player-picture">
+                            <img [src]="player.computed.leagueData.logo" [alt]="player.player.name" />
+                        </div>
+                    </div>
+                </ng-template>
+            </p-card>
+        </div>
+    </div>
+
+    <div class="player-more-details text card-border">
+        <p-card>
+            <ng-template #content>
+                <div class="player-more-details-content">
+                    <div class="detail">
+                        <span class="text text-lg text-muted">Nationalité</span>
+                        <span class="text-xl text-bold">{{ player.player.nationality }}</span>
+                    </div>
+
+                    <div class="detail">
+                        <span class="text text-lg text-muted">{{
+                            player.player.birth.date | date
+                            }}</span>
+                        <span class="text-xl text-bold">{{ player.player.age }} ans</span>
+                    </div>
+                    <div class="detail">
+                        <span class="text text-lg text-muted">Taille</span>
+                        <span class="text-xl text-bold">{{ player.player.height }}</span>
+                    </div>
+                    <div class="detail">
+                        <span class="text text-lg text-muted">Poids</span>
+                        <span class="text-xl text-bold">{{player.player.weight}}</span>
+                    </div>
+                    <div class="detail">
+                        <span class="text text-lg text-muted">Poste</span>
+                        <span class="text-xl text-bold">{{player.statistics[0].games.position}}</span>
+                    </div>
+                    <div class="detail">
+                        <span class="text text-lg text-muted">Equipe</span>
+                        <span class="text-xl text-bold">{{player.statistics[0].team.name}}</span>
+                    </div>
+
+                </div>
+            </ng-template>
+        </p-card>
+    </div>
+
+    <div class="attributs-and-national-stats">
+        <div class="attibuts card-border">
+            <p-card [style]="{ width: '100%'}" class="attibuts-card-content">
+                <ng-content #body>
+                    <span class="text text-bold text-xl">Aperçu des attributs</span>
+                    <app-radar-chart class="radar-chart"></app-radar-chart>
+                </ng-content>
+            </p-card>
+        </div>
+
+        <div class="national-team-stats card-border">
+            <p-card [style]="{ width: '100%'}" class="attibuts-card-content">
+                <ng-content #body>
+
+                    <span class="text text-bold text-xl">Equipe nationale</span>
+                    <div class="national-team">
+                        <img [src]="player.computed.nationalTeamStats[0].team.logo" />
+                        <div class="national-team-name-and-start">
+                            <p class="text text-xl">{{ player.player.nationality }}</p>
+                        </div>
+                    </div>
+
+                    <div class="national-team-apperances-and-goals">
+                        <div class="national-team-appearances">
+                            <p class="text text-xl">Buts</p>
+                            <p class="text text-value">
+                                {{ player.computed.goalsWithNationalTeam}}
+                            </p>
+                        </div>
+
+                        <div class="national-team-goals">
+                            <p class="text text-xl">Assists</p>
+                            <p class="text text-value">
+                                {{ player.computed.assistsWithNationalTeam}}
+                            </p>
+                        </div>
+                    </div>
+
+                </ng-content>
+
+            </p-card>
+        </div>
+    </div>
+
+    <div class="detailed-stats card-border">
+        <span class="text text-bold text-xl" id="seaonTitle">Saison 2023</span>
+
+        <div class="accordion-data">
+            <p-accordion value="0" [multiple]="true">
+
+
+                <p-accordion-panel value="1">
+                    <p-accordion-header>Matchs</p-accordion-header>
+                    <p-accordion-content class="accordion-panel-content">
+                        <div class="accordion-content">
+                            <p>Apparitions : <span>{{ player.computed.appearences }}</span></p>
+                            <p>Titulaire : <span>{{ player.computed.lineups }}</span></p>
+                            <p>Total des minutes jouées : <span>{{ player.computed.minutes }} min</span></p>
+                        </div>
+                    </p-accordion-content>
+                </p-accordion-panel>
+
+                <p-accordion-panel value="2">
+                    <p-accordion-header>Attaque</p-accordion-header>
+                    <p-accordion-content class="accordion-panel-content">
+                        <div class="accordion-content">
+                            <p>Buts : <span>{{ player.computed.goals }}</span></p>
+                            <p>Total des tirs : <span>{{ player.computed.shots }}</span></p>
+                            <p>Tirs cadrés : <span>{{ player.computed.shotsOn }}</span></p>
+                            <p>Penalty réussi : <span>{{ player.computed.penaltyScored }}</span></p>
+                        </div>
+                    </p-accordion-content>
+                </p-accordion-panel>
+
+                <p-accordion-panel value="3">
+                    <p-accordion-header>Passes</p-accordion-header>
+                    <p-accordion-content class="accordion-panel-content">
+                        <div class="accordion-content">
+                            <p>Passes décisives : <span>{{ player.computed.assists }}</span></p>
+                            <p>Total passes : <span>{{ player.computed.totalPasses }}</span></p>
+                            <p>Passes clées : <span>{{ player.computed.keyPasses }}</span></p>
+                        </div>
+                    </p-accordion-content>
+                </p-accordion-panel>
+
+                <p-accordion-panel value="4">
+                    <p-accordion-header>Défense</p-accordion-header>
+                    <p-accordion-content class="accordion-panel-content">
+                        <div class="accordion-content">
+                            <p>Total duels : <span>{{ player.computed.totalDuel }}</span></p>
+                            <p>Duels gagnés : <span>{{ player.computed.duelWon }}</span></p>
+                            <p>Tacles : <span>{{ player.computed.tackles}}</span></p>
+                            <p>Intérceptions : <span>{{ player.computed.interceptions }}</span>
+                            </p>
+                            <p>Fautes commises : <span>{{player.computed.foulsCommited }}</span></p>
+                            <p>Fautes subies : <span>{{ player.computed.foolsDrawn }}</span></p>
+                        </div>
+                    </p-accordion-content>
+                </p-accordion-panel>
+            </p-accordion>
+        </div>
+
+    </div>
+    }
+</div>

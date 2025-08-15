@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { catchError, forkJoin, map, Observable, of, tap } from 'rxjs';
-import { Player, PlayersApiResponse, Statistic, TopPlayer } from '../models/player.model';
+import {PlayersApiResponse, PlayerWithStatistics, Statistic, TopPlayer } from '../models/player.model';
 
 @Injectable({ providedIn: 'root' })
 export class FootballApiService {
@@ -32,7 +32,7 @@ export class FootballApiService {
       }
     }
 
-    const topPlayersId: number[] = [1100, 386828, 278, 154, 874]; // Modifier en plus propre car magic numbers
+    const topPlayersId: number[] = [1100, 521, 278, 154, 874]; // Modifier en plus propre car magic numbers
 
     const requests: Observable<PlayersApiResponse>[] = topPlayersId.map((id) =>
       this.http.get<PlayersApiResponse>(`${this.apiUrl}/players/`, {
@@ -43,9 +43,9 @@ export class FootballApiService {
 
     return forkJoin(requests).pipe(
       map((responses: PlayersApiResponse[]) =>
-        responses.map((player: PlayersApiResponse) => player.response[0] as Player)
+        responses.map((player: PlayersApiResponse) => player.response[0] as PlayerWithStatistics)
       ),
-      map((topPlayers: Player[]) => topPlayers.map((player: Player) => {
+      map((topPlayers: PlayerWithStatistics[]) => topPlayers.map((player: PlayerWithStatistics) => {
         console.log(player);
         return {
           playerData: player.player,
@@ -54,7 +54,10 @@ export class FootballApiService {
           }, 0),
           assists: player.statistics.reduce((acc: number, current: Statistic) => {
             return acc + (current.goals?.assists ?? 0);
-          }, 0)
+          }, 0),
+          // rating: player.statistics.reduce((acc:number,current Statistic,) => {
+
+          // })
         }
       })),
       tap((players: TopPlayer[]) => {
@@ -74,7 +77,8 @@ export class FootballApiService {
   }
 
   getPlayerProfil(playerId: number) {
-    
+    console.log(playerId)
+
     const key = `player_${playerId}`;
     const cached = localStorage.getItem(key);
 
@@ -85,10 +89,12 @@ export class FootballApiService {
       }
     }
 
-    return this.http.get(`${this.apiUrl}/players/profiles`, {
-      params: { player: playerId },
+    return this.http.get<PlayersApiResponse>(`${this.apiUrl}/players/`, {
+      params: { id: playerId, season : 2023 },
       headers: this.getHeaders()
     }).pipe(
+      tap((res) => console.log(res)),
+      map((playerResponse: PlayersApiResponse) => playerResponse.response[0] as PlayerWithStatistics),
       tap((data) =>
         localStorage.setItem(
           key,
