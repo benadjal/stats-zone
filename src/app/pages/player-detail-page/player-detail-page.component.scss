@@ -4,20 +4,20 @@
 }
 
 .main-detailed-page-container {
-  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .player-detail-container {
   display: flex;
   justify-content: space-around;
-  margin-top: 3%;
 }
 
 .player-essential-informations {
   width: 40%;
 
   .player-picture {
-    margin-top: 2%;
 
     img {
       border-radius: 50%;
@@ -58,7 +58,6 @@
 .player-more-details {
   width: 85%;
   margin: auto;
-  margin-top: 3%;
 }
 
 .player-more-details-content {
@@ -81,8 +80,8 @@
   justify-content: center;
   flex-wrap: wrap;
   margin: auto;
-  width: 87%;
-  gap: 20px;
+  //width: 87%;
+  gap: 1rem;
 }
 
 .attibuts,
@@ -93,7 +92,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2%
 }
 
 :host ::ng-deep .attibuts-card-content .p-card-content {
@@ -149,7 +147,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 2%;
 }
 
 .national-team-apperances-and-goals {
@@ -229,8 +226,7 @@ p-accordion {
 
 @media screen and (max-width: 571px) {
   .attributs-and-national-stats {
-    width: 90%;
-    margin-top: 6%;
+    //width: 90%;
   }
 
   .attibuts,

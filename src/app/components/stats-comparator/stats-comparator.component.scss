@@ -3,16 +3,13 @@ h2 {
   font-family: "Orbitron";
   font-size: 27px;
   margin-bottom: 0;
-  margin-top: 2%;
 }
 
 .compare-stats-container {
   font-family: "Orbitron";
   width: 40%;
   margin: auto;
-  margin-top: 2%;
   border-radius: 10px;
-  padding: 2% 0 2% 0;
 }
 
 .compare-stats-card {
@@ -22,7 +19,6 @@ h2 {
 }
 
 .compare-btn {
-  margin-top: 2%;
   display: flex;
   justify-content: center;
 }
@@ -92,8 +88,6 @@ h2 {
 
 @media screen and (max-width: 1131px) {
   h2 {
-    margin-top: 4%;
-
     text-align: center;
   }
 }
@@ -118,5 +112,5 @@ h2 {
     width: 100%;
   }
 
-  
+
 }
