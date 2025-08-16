@@ -1,4 +1,4 @@
-<!-- <h2 class="mb-3">Comparer les statistiques</h2>
+<h2 class="mb-3">Comparer les statistiques</h2>
 
 <div class="compare-stats-container">
   <p-card class="compare-stats-card card-border">
@@ -8,15 +8,15 @@
     } @else {
     <div class="result-item">
       <div class="result-item-picture">
-        <img [src]="playerOne.pictureUrl" />
+        <img [src]="playerOne.photo" />
       </div>
 
       <div class="result-item-detail">
         <div class="result-item-name">
-          <p>{{ playerOne.name }} {{ playerOne.lastName }}</p>
+          <p>{{ playerOne.name }}</p>
         </div>
         <div class="result-item-team">
-          <p>{{ playerOne.team }}</p>
+          <p>{{ playerOne.nationality }}</p>
         </div>
       </div>
       <i class="material-icons" (click)="unSelectPlayer('playerOne')">close</i>
@@ -33,15 +33,15 @@
     } @else {
     <div class="result-item">
       <div class="result-item-picture">
-        <img [src]="playerTwo.pictureUrl" />
+        <img [src]="playerTwo.photo" />
       </div>
 
       <div class="result-item-detail">
         <div class="result-item-name">
-          <p>{{ playerTwo.name }} {{ playerTwo.lastName }}</p>
+          <p>{{ playerTwo.name }}</p>
         </div>
         <div class="result-item-team">
-          <p>{{ playerTwo.team }}</p>
+          <p>{{ playerTwo.nationality }}</p>
         </div>
       </div>
       <i class="material-icons" (click)="unSelectPlayer('playerTwo')">close</i>
@@ -55,54 +55,3 @@
   </p-card>
 
 </div>
-
- <div class="compare-stats-container">
-  @if (!isPlayerOneSelected) {
-    <app-search-bar
-      class="search-bar-player"
-      [mode]="'comparePlayerOne'"
-      (playerSelected)="selectPlayer($event)"
-    ></app-search-bar>
-  } @else {
-    <div class="result-item">
-      <div class="result-item-picture">
-        <img [src]="playerOne.pictureUrl" />
-      </div>
-
-      <div class="result-item-detail">
-        <div class="result-item-name">
-          <p>{{ playerOne.name }} {{ playerOne.lastName }}</p>
-        </div>
-        <div class="result-item-team">
-          <p>{{ playerOne.team }}</p>
-        </div>
-      </div>
-      <i class="material-icons" (click)="unSelectPlayer('playerOne')">close</i>
-    </div>
-  }
-  <hr />
-  @if (!isPlayerTwoSelected) {
-    <app-search-bar
-      class="search-bar-player"
-      [mode]="'comparePlayerTwo'"
-      (playerSelected)="selectPlayer($event)"
-    ></app-search-bar>
-  } @else {
-    <div class="result-item">
-      <div class="result-item-picture">
-        <img [src]="playerTwo.pictureUrl" />
-      </div>
-
-      <div class="result-item-detail">
-        <div class="result-item-name">
-          <p>{{ playerTwo.name }} {{ playerTwo.lastName }}</p>
-        </div>
-        <div class="result-item-team">
-          <p>{{ playerTwo.team }}</p>
-        </div>
-      </div>
-      <i class="material-icons" (click)="unSelectPlayer('playerTwo')">close</i>
-    </div>
-  }
-  <button class="compare-btn">Comparer</button>
-</div> --> -->
