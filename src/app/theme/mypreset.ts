@@ -103,6 +103,18 @@ export const MyPreset = definePreset(Aura, {
                     }
                 }
             }
+        },
+        menubar : {
+            colorScheme : {
+                dark : {
+                    root : {
+                        gap : '20px',
+                        background : '{surface.850}',
+                        borderRadius : '10px',
+                        borderColor : '{surface.850}'
+                    }
+                }
+            }
         }
     }
 });

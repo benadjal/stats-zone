@@ -1,11 +1,17 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { MenuItems } from './models/utils.model';
+import { Toolbar } from "./components/menubar/toolbar";
+
 
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet],
+    RouterOutlet,
+    Toolbar
+],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
-export class App {}
+export class App {
+}

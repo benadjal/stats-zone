@@ -40,7 +40,7 @@ export class SearchBarComponent {
   });
 
   filtredPlayers$: Observable<PlayerData[]> = this.searchForm.controls.search.valueChanges.pipe(
-    debounceTime(500),
+    debounceTime(400),
     distinctUntilChanged(),
     switchMap((search) => this.footballService.searchPlayer(search)),
   );

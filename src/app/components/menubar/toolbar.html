@@ -1,0 +1,18 @@
+<p-menubar [model]="items" class="flex">
+    <ng-template #start>
+        <div class="logo">
+            <img src="assets/logoSZ.png">
+        </div>
+    </ng-template>
+    <ng-template #item let-item let-root="root">
+        <!-- <a> <i class="pi pi-times" style="font-size: 1.5rem"></i>
+            <span>{{ item.label }}</span> </a> -->
+    </ng-template>
+    <ng-template #end>
+        <div class="end">
+            <div class="card flex justify-center">
+                <p-toggleswitch [(ngModel)]="checked" />
+            </div>
+        </div>
+    </ng-template>
+</p-menubar>
