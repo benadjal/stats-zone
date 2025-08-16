@@ -1,4 +1,4 @@
-<!-- <div class="search-container">
+<div class="search-container">
   <form [formGroup]="searchForm">
     <p-floatlabel variant="on">
       <input pInputText pSize="large" id="search" formControlName="search" />
@@ -12,15 +12,15 @@
     @for (player of filtredPlayers; track player.id) {
     <div class="result-item" (click)="selectPlayer(player)">
       <div class="result-item-picture">
-        <img [src]="player.pictureUrl" />
+        <img [src]="player.photo" />
       </div>
 
       <div class="result-item-detail">
         <div class="result-item-name">
-          <p>{{ player.name }} {{ player.lastName }}</p>
+          <p>{{ player.name}}</p>
         </div>
         <div class="result-item-team">
-          <p>{{ player.team }}</p>
+          <p>{{ player.nationality }}</p>
         </div>
       </div>
     </div>
@@ -28,4 +28,4 @@
   </div>
   }
   }
-</div> -->
+</div>

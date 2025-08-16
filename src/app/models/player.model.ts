@@ -10,7 +10,7 @@ export interface PlayersApiResponse {
   errors: unknown[];
   results: number;
   paging: Paging;
-  response: PlayerWithStatistics[];
+  response: PlayerWithStatistics[] | PlayerData[] | ApiPlayerData[];
 }
 
 export interface PlayersParameters {
@@ -71,6 +71,10 @@ export interface PlayerData {
   weight: string;
   injured: boolean;
   photo: string;
+}
+
+export interface ApiPlayerData {
+  player : PlayerData;
 }
 
 export interface Birth {

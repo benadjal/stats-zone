@@ -1,4 +1,4 @@
-import { AsyncPipe, NgStyle } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import {
   FormControl,
@@ -6,11 +6,12 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { PlayersService } from '../../services/players.service';
 import { Router } from '@angular/router';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { PlayerData } from '../../models/player.model';
+import { FootballApiService } from '../../services/football-api.service';
+import { debounceTime, distinctUntilChanged, filter, Observable, switchMap } from 'rxjs';
 
 export interface PlayerSelection {
   player: PlayerData;
@@ -26,7 +27,7 @@ export type SearchBarMode = 'search' | 'comparePlayerOne' | 'comparePlayerTwo'
   styleUrl: './search-bar.component.scss',
 })
 export class SearchBarComponent {
-  playerService = inject(PlayersService);
+  footballService = inject(FootballApiService);
 
   router = inject(Router);
 
@@ -38,11 +39,11 @@ export class SearchBarComponent {
     search: new FormControl('', {nonNullable: true, validators: Validators.required}),
   });
 
-  // filtredPlayers$: Observable<Player[]> = this.searchForm.controls.search.valueChanges.pipe(
-  //   debounceTime(300),
-  //   distinctUntilChanged(),
-  //   switchMap((search) => this.playerService.getFilteredPlayers(search)),
-  // );
+  filtredPlayers$: Observable<PlayerData[]> = this.searchForm.controls.search.valueChanges.pipe(
+    debounceTime(500),
+    distinctUntilChanged(),
+    switchMap((search) => this.footballService.searchPlayer(search)),
+  );
 
   selectPlayer(player: any): void {
     if (this.mode === 'search') {

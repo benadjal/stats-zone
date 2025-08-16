@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { catchError, forkJoin, map, Observable, of, tap } from 'rxjs';
-import {PlayersApiResponse, PlayerWithStatistics, Statistic, TopPlayer } from '../models/player.model';
+import {ApiPlayerData, PlayerData, PlayersApiResponse, PlayerWithStatistics, Statistic, TopPlayer } from '../models/player.model';
 
 @Injectable({ providedIn: 'root' })
 export class FootballApiService {
@@ -26,7 +26,7 @@ export class FootballApiService {
       const { data, timestamp } = JSON.parse(cached);
       const now = Date.now();
 
-      if (now - timestamp < 86400000) {
+      if (now - timestamp < 86400000 * 3) {
         this.topPlayersCache = data;
         return of(this.topPlayersCache)
       }
@@ -102,6 +102,18 @@ export class FootballApiService {
         )
       )
     );
+  }
+
+  searchPlayer(search : string) : Observable<PlayerData[]> {
+    return this.http.get<PlayersApiResponse>(`${this.apiUrl}/players/profiles`,{
+      params : {search : search},
+      headers : this.getHeaders()
+    }).pipe(
+      map((playerResponse : PlayersApiResponse) => playerResponse.response as ApiPlayerData[]),
+      map((players : ApiPlayerData[] ) => players.map((player) => player.player)),
+      map((player : PlayerData[]) => player.filter((player) => player.age || player.firstname || player.lastname || player.nationality)),
+      // tap((res) => console.log(res))
+    )
   }
 }
 
