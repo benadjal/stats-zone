@@ -1,18 +1,24 @@
 <p-menubar [model]="items" class="flex">
-    <ng-template #start>
-        <div class="logo">
-            <img src="assets/logoSZ.png">
+
+    <ng-template pTemplate="start">
+        <div class="logo flex items-center">
+            <img src="assets/logoSZ.png" class="h-10">
         </div>
     </ng-template>
-    <ng-template #item let-item let-root="root">
-        <!-- <a> <i class="pi pi-times" style="font-size: 1.5rem"></i>
-            <span>{{ item.label }}</span> </a> -->
+
+    <ng-template pTemplate="item" let-item let-root="root">
+        <a>
+            @if(item.icon) {
+            <i [class]="item.icon"></i>
+            }
+            <span class="">{{ item.label }}</span>
+        </a>
+
     </ng-template>
-    <ng-template #end>
-        <div class="end">
-            <div class="card flex justify-center">
-                <p-toggleswitch [(ngModel)]="checked" />
-            </div>
-        </div>
+
+    <!-- À droite (desktop uniquement) -->
+    <ng-template pTemplate="end">
+        <p-toggleswitch [(ngModel)]="checked" />
     </ng-template>
+
 </p-menubar>

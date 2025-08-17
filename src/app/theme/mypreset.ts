@@ -62,7 +62,7 @@ export const MyPreset = definePreset(Aura, {
                     root: {
                         borderColor: '{primary.500}',
                         invalidBorderColor: '{primary.500}',
-                        borderRadius : '10px'
+                        borderRadius: '10px'
                     }
                 }
             }
@@ -75,46 +75,46 @@ export const MyPreset = definePreset(Aura, {
                 },
                 dark: {
                     root: {
-                        invalidColor: '{surface.400}',
+                        invalidColor: '{surface.500}',
                     }
                 }
             }
         },
-
         card: {
             colorScheme: {
-                // light: {
-                //     root : {
-                //         // background : '{primary.50}'
-                //     },
-                // },
-                dark : {
-                    root : {
-                        background : '{surface.950}'
+                dark: {
+                    root: {
+                        background: '{surface.950}'
                     }
                 }
             }
         },
         accordion: {
-            colorScheme : {
-                dark : {
-                    panel : {
-                        borderWidth : '1px'
+            colorScheme: {
+                dark: {
+                    panel: {
+                        borderWidth: '1px'
                     }
                 }
             }
         },
-        menubar : {
-            colorScheme : {
-                dark : {
-                    root : {
-                        gap : '20px',
-                        background : '{surface.850}',
-                        borderRadius : '10px',
-                        borderColor : '{surface.850}'
-                    }
+        menubar: {
+            mobileButton: {
+                size: '3rem',
+                color: '{primary.600}',
+            },
+            baseItem : {
+                 padding : '1rem  1rem'
+            },
+            colorScheme: {
+                dark: {
+                    root: {
+                        gap: '20px',
+                        background: '{surface.850}',
+                        borderColor: '{surface.850}'
+                    },
                 }
-            }
+            },
         }
     }
 });

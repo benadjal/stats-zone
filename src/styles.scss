@@ -1,5 +1,13 @@
 @import "primeicons/primeicons.css";
 
+.p-menubar-root-list {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        @extend .text
+}
+
 .text {
   font-family: "Orbitron";
   color: white;
