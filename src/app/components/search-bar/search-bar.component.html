@@ -1,31 +1,18 @@
 <div class="search-container">
   <form [formGroup]="searchForm">
-    <p-floatlabel variant="on">
-      <input pInputText pSize="large" id="search" formControlName="search" />
-      <label for="search">Rechercher un joueur</label>
-    </p-floatlabel>
+    <p-autoComplete formControlName="search" [suggestions]="filtredPlayers$ | async" size="large"
+      placeholder="Rechercher un joueur" [inputStyle]="{width : '100%'}" style="width: 100%" field="name"
+      (onSelect)="selectPlayer($event.value)">
+      
+      <ng-template let-player pTemplate="item">
+        <div class="flex align-items-center">
+          <img [src]="player.photo" width="40" class="mr-2 border-circle" />
+          <div>
+            <div class="font-bold">{{ player.name }}</div>
+            <small class="text-sm text-color-secondary">{{ player.nationality }}</small>
+          </div>
+        </div>
+      </ng-template>
+    </p-autoComplete>
   </form>
-
-  @if (filtredPlayers$ | async; as filtredPlayers) {
-  @if (filtredPlayers.length > 0) {
-  <div class="search-results">
-    @for (player of filtredPlayers; track player.id) {
-    <div class="result-item" (click)="selectPlayer(player)">
-      <div class="result-item-picture">
-        <img [src]="player.photo" />
-      </div>
-
-      <div class="result-item-detail">
-        <div class="result-item-name">
-          <p>{{ player.name}}</p>
-        </div>
-        <div class="result-item-team">
-          <p>{{ player.nationality }}</p>
-        </div>
-      </div>
-    </div>
-    }
-  </div>
-  }
-  }
 </div>

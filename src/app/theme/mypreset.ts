@@ -72,10 +72,20 @@ export const MyPreset = definePreset(Aura, {
                 }
             }
         },
+
+        autocomplete: {
+            root: {
+                invalidBorderColor: '{primary.500}',
+                borderRadius: '10px',
+                background: '{surface.50}',
+                invalidPlaceholderColor : '{stone.500}',
+                color : '{stone.500}'
+            }
+        },
         floatlabel: {
             colorScheme: {
                 light: {
-                     root: {
+                    root: {
                         invalidColor: '{surface.500}',
                     }
                 },

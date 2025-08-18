@@ -11,7 +11,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { PlayerData } from '../../models/player.model';
 import { FootballApiService } from '../../services/football-api.service';
-import { debounceTime, distinctUntilChanged, filter, Observable, switchMap } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, map, Observable, switchMap, tap } from 'rxjs';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+
 
 export interface PlayerSelection {
   player: PlayerData;
@@ -22,7 +24,7 @@ export type SearchBarMode = 'search' | 'comparePlayerOne' | 'comparePlayerTwo'
 
 @Component({
   selector: 'app-search-bar',
-  imports: [ReactiveFormsModule, AsyncPipe,InputTextModule,FloatLabelModule],
+  imports: [ReactiveFormsModule, AsyncPipe,InputTextModule,FloatLabelModule,AutoCompleteModule],
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.scss',
 })
@@ -39,13 +41,15 @@ export class SearchBarComponent {
     search: new FormControl('', {nonNullable: true, validators: Validators.required}),
   });
 
-  filtredPlayers$: Observable<PlayerData[]> = this.searchForm.controls.search.valueChanges.pipe(
+  filtredPlayers$: Observable<any> = this.searchForm.controls.search.valueChanges.pipe(
+    tap((res) => console.log(res)),
     debounceTime(400),
     distinctUntilChanged(),
+    filter((search) => typeof search === 'string'),
     switchMap((search) => this.footballService.searchPlayer(search)),
   );
 
-  selectPlayer(player: any): void {
+  selectPlayer(player: PlayerData): void {
     if (this.mode === 'search') {
       this.searchForm.controls.search.reset();
       this.router.navigate(['player-detail', player.id]);
