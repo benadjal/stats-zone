@@ -6,21 +6,24 @@
     <app-search-bar class="search-bar-player" [mode]="'comparePlayerOne'"
       (playerSelected)="selectPlayer($event)"></app-search-bar>
     } @else {
-    <div class="result-item">
-      <div class="result-item-picture">
-        <img [src]="playerOne.photo" />
-      </div>
+    <p-card>
+      <div class="result-item">
+        <div class="result-item-picture">
+          <img [src]="playerOne.photo" />
+        </div>
 
-      <div class="result-item-detail">
-        <div class="result-item-name">
-          <p>{{ playerOne.name }}</p>
+        <div class="result-item-detail">
+          <div class="result-item-name">
+            <p>{{ playerOne.name }}</p>
+          </div>
+          <div class="result-item-team">
+            <p>{{ playerOne.nationality }}</p>
+          </div>
         </div>
-        <div class="result-item-team">
-          <p>{{ playerOne.nationality }}</p>
-        </div>
+        <i class="material-icons" (click)="unSelectPlayer('playerOne')">close</i>
       </div>
-      <i class="material-icons" (click)="unSelectPlayer('playerOne')">close</i>
-    </div>
+    </p-card>
+
     }
 
     <div class="divider">
@@ -31,25 +34,28 @@
     <app-search-bar class="search-bar-player" [mode]="'comparePlayerTwo'"
       (playerSelected)="selectPlayer($event)"></app-search-bar>
     } @else {
-    <div class="result-item">
-      <div class="result-item-picture">
-        <img [src]="playerTwo.photo" />
+    <p-card>
+      <div class="result-item">
+        <div class="result-item-picture">
+          <img [src]="playerTwo.photo" />
+        </div>
+
+        <div class="result-item-detail">
+          <div class="result-item-name">
+            <p>{{ playerTwo.name }}</p>
+          </div>
+          <div class="result-item-team">
+            <p>{{ playerTwo.nationality }}</p>
+          </div>
+        </div>
+        <i class="material-icons" (click)="unSelectPlayer('playerTwo')">close</i>
       </div>
 
-      <div class="result-item-detail">
-        <div class="result-item-name">
-          <p>{{ playerTwo.name }}</p>
-        </div>
-        <div class="result-item-team">
-          <p>{{ playerTwo.nationality }}</p>
-        </div>
-      </div>
-      <i class="material-icons" (click)="unSelectPlayer('playerTwo')">close</i>
-    </div>
+    </p-card>
     }
-    <div class="compare-btn">
-      <p-button class="compare-btn">Comparer</p-button>
 
+    <div class="compare-btn mt-3">
+      <p-button class="compare-btn">Comparer</p-button>
     </div>
 
   </p-card>
