@@ -20,17 +20,17 @@ export const MyPreset = definePreset(Aura, {
             light: {
                 surface: {
                     0: '#ffffff',
-                    50: '{emerald.50}',
-                    100: '{emerald.100}',
-                    200: '{emerald.200}',
-                    300: '{emerald.300}',
-                    400: '{emerald.400}',
-                    500: '{emerald.500}',
-                    600: '{emerald.600}',
-                    700: '{emerald.700}',
-                    800: '{emerald.800}',
-                    900: '{emerald.900}',
-                    950: '{emerald.950}'
+                    50: '{neutral.50}',
+                    100: '{neutral.100}',
+                    200: '{neutral.200}',
+                    300: '{neutral.300}',
+                    400: '{neutral.400}',
+                    500: '{neutral.500}',
+                    600: '{neutral.600}',
+                    700: '{neutral.700}',
+                    800: '{neutral.800}',
+                    900: '{neutral.900}',
+                    950: '{neutral.950}'
                 }
             },
             dark: {
@@ -56,13 +56,18 @@ export const MyPreset = definePreset(Aura, {
             colorScheme: {
                 light: {
                     root: {
+                        borderColor: '{primary.500}',
+                        invalidBorderColor: '{primary.500}',
+                        borderRadius: '10px',
+                        background: '{surface.50}'
                     },
                 },
                 dark: {
                     root: {
                         borderColor: '{primary.500}',
                         invalidBorderColor: '{primary.500}',
-                        borderRadius: '10px'
+                        borderRadius: '10px',
+                        background: '{surface.900}'
                     }
                 }
             }
@@ -70,8 +75,9 @@ export const MyPreset = definePreset(Aura, {
         floatlabel: {
             colorScheme: {
                 light: {
-                    root: {
-                    },
+                     root: {
+                        invalidColor: '{surface.500}',
+                    }
                 },
                 dark: {
                     root: {
@@ -82,9 +88,14 @@ export const MyPreset = definePreset(Aura, {
         },
         card: {
             colorScheme: {
+                light: {
+                    root: {
+                        background: '{surface.50}',
+                    }
+                },
                 dark: {
                     root: {
-                        background: '{surface.950}'
+                        background: '{surface.900}'
                     }
                 }
             }
@@ -103,8 +114,8 @@ export const MyPreset = definePreset(Aura, {
                 size: '3rem',
                 color: '{primary.600}',
             },
-            baseItem : {
-                 padding : '1rem  1rem'
+            baseItem: {
+                padding: '1rem  1rem'
             },
             colorScheme: {
                 dark: {
@@ -113,6 +124,11 @@ export const MyPreset = definePreset(Aura, {
                         background: '{surface.850}',
                         borderColor: '{surface.850}'
                     },
+                },
+                light: {
+                    root: {
+                        borderColor: '{surface.0}',
+                    }
                 }
             },
         }
