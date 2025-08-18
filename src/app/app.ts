@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MenuItems } from './models/utils.model';
-import { Toolbar } from "./components/menubar/toolbar";
+import { Toolbar } from "./components/toolbar/toolbar";
 
 
 @Component({

@@ -1,17 +1,15 @@
 h2 {
-  color: white;
   font-family: "Orbitron";
   font-size: 27px;
   margin-bottom: 0;
 }
 
 .material-icons {
-  color: #00ff57;
+  color: #22c55e;
   font-size: 35px;
 }
 
 span {
-  color: white;
   font-family: "Orbitron";
   font-size: 20px;
   max-width: 200px;
@@ -39,10 +37,8 @@ span {
 
 .news-block:hover {
   transform: scale(1.1);
-  background-color: #003b14;
   box-shadow: 0 30px 40px rgba(0, 255, 87, 0.3);
   cursor: pointer;
-  color: white;
 }
 
 @media screen and (max-width: 1131px) {

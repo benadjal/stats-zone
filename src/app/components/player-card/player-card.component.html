@@ -1,30 +1,24 @@
-<p-card class="player-card card-border">
+<p-card class="player-card card-border pt-3 flex flex-column align-items-center">
   <ng-template #header>
-    <img alt="Card" class="player-picture" [src]="player.playerData.photo"/>
+    <img alt="Card" class="player-picture" [src]="player.playerData.photo" />
   </ng-template>
-  <ng-template #title> <p class="player-name">{{player.playerData.name}}</p> </ng-template>
-  <div class="stats">
-    <div class="goals">
-      <p class="stats-title">Buts</p>
-      <p class="stats-details">{{ player.goals }}</p>
+  <ng-template #title>
+    <p class="text-align-center">{{player.playerData.name}}</p>
+  </ng-template>
+  <div class="flex justify-content-between">
+    <div class="flex-column justify-content-center align-items-center">
+      <p class="text-align-center">Buts</p>
+      <p class="text-align-center">{{ player.goals }}</p>
     </div>
 
-    <div class="assists">
-      <p class="stats-title">Passes</p>
-      <p class="stats-details">{{ player.assists }}</p>
+    <div class="flex-column justify-content-center align-items-center">
+      <p class="text-align-center">Passes</p>
+      <p class="text-align-center">{{ player.assists }}</p>
     </div>
-
-    <!-- <div class="mark">
-      <p class="stats-title">Note</p>
-      <p class="stats-details">{{ player.mark }}</p>
-    </div> -->
   </div>
   <ng-template #footer>
-    <div class="check-profil">
+    <div class="flex justify-content-center">
       <p-button label="Voir le profil" [routerLink]="['player-detail',player.playerData.id]" />
     </div>
   </ng-template>
 </p-card>
-
-
-

@@ -16,9 +16,8 @@
 
     </ng-template>
 
-    <!-- À droite (desktop uniquement) -->
     <ng-template pTemplate="end">
-        <p-toggleswitch [(ngModel)]="checked" />
+        <p-toggleswitch [(ngModel)]="checked" onLabel="Dark" ariaLabel="Light" (ngModelChange)="toggleDarkMode()" />
     </ng-template>
 
 </p-menubar>

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
 import { Menubar } from 'primeng/menubar';
 import { ToggleSwitchModule } from 'primeng/toggleswitch';
 
@@ -13,7 +14,7 @@ export interface MenuItems {
 @Component({
   selector: 'app-toolbar',
   imports: [Menubar,
-    ToggleSwitchModule, FormsModule],
+    ToggleSwitchModule, FormsModule, ButtonModule],
   templateUrl: './toolbar.html',
   styleUrl: './toolbar.scss'
 })
@@ -34,4 +35,9 @@ export class Toolbar {
 
 
   checked: boolean = false;
+
+  toggleDarkMode() {
+    const element = document.querySelector('html');
+    element!.classList.toggle('app-dark');
+  }
 }
