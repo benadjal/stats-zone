@@ -1,17 +1,17 @@
-<p-menubar [model]="items" class="flex">
+<p-menubar [model]="items" class="flex" style="font-family: 'Inter', sans-serif; font-weight: bold;">
 
     <ng-template pTemplate="start">
         <div class="logo flex items-center">
-            <img src="assets/logoSZ.png" class="h-10">
+            <img src="assets/logo_transparent.png" class="h-10">
         </div>
     </ng-template>
 
     <ng-template pTemplate="item" let-item let-root="root">
-        <a>
+        <a class="text-7xl">
             @if(item.icon) {
             <i [class]="item.icon"></i>
             }
-            <span class="">{{ item.label }}</span>
+            <span >{{ item.label }}</span>
         </a>
 
     </ng-template>
