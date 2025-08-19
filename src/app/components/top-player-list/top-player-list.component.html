@@ -1,6 +1,6 @@
 <h2 class="mb-3">Top Joueurs</h2>
 
-<div class="list-top-players">
+  <div class="flex flex-column align-items-center flex-wrap md:flex-row md:justify-content-between">
   @for (player of topPlayers$ | async; track player.playerData.id) {
     <app-player-card [player]="player"></app-player-card>
   }
