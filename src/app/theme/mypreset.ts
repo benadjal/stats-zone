@@ -78,8 +78,8 @@ export const MyPreset = definePreset(Aura, {
                 invalidBorderColor: '{primary.500}',
                 borderRadius: '10px',
                 background: '{surface.50}',
-                invalidPlaceholderColor : '{stone.500}',
-                color : '{stone.500}'
+                invalidPlaceholderColor: '{stone.500}',
+                color: '{stone.500}'
             }
         },
         floatlabel: {
@@ -105,7 +105,8 @@ export const MyPreset = definePreset(Aura, {
                 },
                 dark: {
                     root: {
-                        background: '{surface.900}'
+                        background: '{surface.800}',
+
                     }
                 }
             }
@@ -114,7 +115,13 @@ export const MyPreset = definePreset(Aura, {
             colorScheme: {
                 dark: {
                     panel: {
-                        borderWidth: '1px'
+                        borderWidth: '1px',
+                    }
+                },
+                light: {
+                    panel: {
+                        borderWidth: '1px',
+                        borderColor: '{surface.300}',
                     }
                 }
             }

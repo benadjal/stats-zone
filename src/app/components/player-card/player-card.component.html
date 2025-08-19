@@ -3,17 +3,17 @@
     <img alt="Card" class="player-picture" [src]="player.playerData.photo" />
   </ng-template>
   <ng-template #title>
-    <p class="text-align-center">{{player.playerData.name}}</p>
+    <p style="text-align: center;">{{player.playerData.name}}</p>
   </ng-template>
   <div class="flex justify-content-between">
-    <div class="flex-column justify-content-center align-items-center">
-      <p class="text-align-center">Buts</p>
-      <p class="text-align-center">{{ player.goals }}</p>
+    <div class="flex-column justify-content-center">
+      <p style="text-align: center;">Buts</p>
+      <p style="text-align: center;">{{ player.goals }}</p>
     </div>
 
     <div class="flex-column justify-content-center align-items-center">
-      <p class="text-align-center">Passes</p>
-      <p class="text-align-center">{{ player.assists }}</p>
+      <p style="text-align: center;">Passes</p>
+      <p style="text-align: center;">{{ player.assists }}</p>
     </div>
   </div>
   <ng-template #footer>

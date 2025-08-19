@@ -1,7 +1,7 @@
 <h2 class="mb-3">Comparer les statistiques</h2>
 
 <div class="compare-stats-container">
-  <p-card class="compare-stats-card card-border">
+  <p-card class="compare-stats-card card-border pt-3">
     @if (!playerOne) {
     <app-search-bar class="search-bar-player" [mode]="'comparePlayerOne'"
       (playerSelected)="selectPlayer($event)"></app-search-bar>
