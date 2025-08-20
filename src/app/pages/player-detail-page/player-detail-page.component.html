@@ -5,18 +5,16 @@
     </div>
 
     <div class="grid justify-content-around align-items-stretch flex-wrap mb-2">
-        <!-- Bloc joueur -->
-        <div class="col-5">
+        <div class="col-12 md:col-5">
             <p-card class="h-full align-content-center">
                 <ng-template #content>
-                    <div class="flex flex-wrap gap-7">
+                    <div class="flex flex-wrap justify-content-center gap-2 md:gap-7 ">
                         <div class="player-picture flex align-items-center justify-content-center">
                             <img [src]="player.player.photo" [alt]="player.player.name" />
                         </div>
 
-                        <div class="flex flex-column text-2xl justify-content-center">
+                        <div class="flex flex-column text-2xl justify-content-center align-items-center">
                             <span>{{ player.player.name }}</span>
-                            <!-- <span>{{ player.player.lastname }}</span> -->
                             <span>{{ player.statistics[0].games.position }}</span>
                             <span>{{ player.player.nationality }} - {{ player.statistics[0].team.name }}</span>
                         </div>
@@ -25,8 +23,7 @@
             </p-card>
         </div>
 
-        <!-- Bloc ligue -->
-        <div class="col-2">
+        <div class="col-12 md:col-2">
             <p-card class="h-full">
                 <ng-template #content>
                     <div class="flex flex-column justify-content-center align-items-center gap-3">
@@ -41,34 +38,34 @@
     </div>
 
 
-    <div class="px-8 mb-2">
+    <div class="md:px-8 mb-2">
         <p-card>
             <ng-template #content>
                 <div class="grid">
-                    <div class="col-2 flex flex-column align-items-center">
-                        <span class="text-xl text-400  mb-3">Nationalité</span>
+                    <div class="col-12 md:col-2 flex flex-column align-items-center">
+                        <span class="text-xl text-400 mb-3">Nationalité</span>
                         <span class="text-3xl ">{{ player.player.nationality }}</span>
                     </div>
 
-                    <div class="col-2 flex flex-column align-items-center">
+                    <div class="col-12 md:col-2 flex flex-column align-items-center">
                         <span class="text-xl text-400  mb-3">{{
                             player.player.birth.date | date
                             }}</span>
                         <span class="text-3xl ">{{ player.player.age }} ans</span>
                     </div>
-                    <div class="col-2 flex flex-column align-items-center">
+                    <div class="col-12 md:col-2 flex flex-column align-items-center">
                         <span class="text-xl text-400  mb-3">Taille</span>
                         <span class="text-3xl ">{{ player.player.height }}</span>
                     </div>
-                    <div class="col-2 flex flex-column align-items-center">
+                    <div class="col-12 md:col-2 flex flex-column align-items-center">
                         <span class="text-xl text-400  mb-3">Poids</span>
                         <span class="text-3xl ">{{player.player.weight}}</span>
                     </div>
-                    <div class="col-2 flex flex-column align-items-center">
+                    <div class="col-12 md:col-2 flex flex-column align-items-center">
                         <span class="text-xl text-400  mb-3">Poste</span>
                         <span class="text-3xl ">{{player.statistics[0].games.position}}</span>
                     </div>
-                    <div class="col-2 flex flex-column align-items-center">
+                    <div class="col-12 md:col-2 flex flex-column align-items-center">
                         <span class="text-xl text-400  mb-3">Equipe</span>
                         <span class="text-3xl " style="text-align: center;">{{player.statistics[0].team.name}}</span>
                     </div>
@@ -78,10 +75,10 @@
         </p-card>
     </div>
 
-    <div class="flex justify-content-center gap-8 align-items-stretch px-8 mb-2">
+    <div class="flex justify-content-center gap-3 md:gap-8 align-items-stretch md:px-8 mb-2 flex-wrap">
         <div class="flex-grow-1">
             <p-card class="flex justify-content-center align-items-center h-full">
-                <ng-content #body>
+                <ng-content #body class="w-full">
                     <h3 style="text-align: center;">Aperçu des attributs</h3>
                     <app-radar-chart></app-radar-chart>
                 </ng-content>
@@ -122,7 +119,7 @@
         </div>
     </div>
 
-    <div class="px-8 mb-2" style="font-family: 'Orbitron';">
+    <div class="md:px-8 mb-2" style="font-family: 'Orbitron';">
         <h3 class="text-bold text-xl mt-3 mb-3" style="text-align: center;">Saison 2023</h3>
 
         <div class="accordion-data mb-3">
@@ -135,9 +132,11 @@
                         <div class="accordion-content">
                             <p class="m-0 flex justify-content-between ">Apparitions : <span class="text-primary">{{
                                     player.computed.appearences }}</span></p>
-                            <p class="m-0 flex justify-content-between ">Titulaire : <span class="text-primary">{{ player.computed.lineups
+                            <p class="m-0 flex justify-content-between ">Titulaire : <span class="text-primary">{{
+                                    player.computed.lineups
                                     }}</span></p>
-                            <p class="m-0 flex justify-content-between ">Total des minutes jouées : <span class="text-primary">{{
+                            <p class="m-0 flex justify-content-between ">Total des minutes jouées : <span
+                                    class="text-primary">{{
                                     player.computed.minutes }} min</span></p>
                         </div>
                     </p-accordion-content>
@@ -147,11 +146,14 @@
                     <p-accordion-header>Attaque</p-accordion-header>
                     <p-accordion-content class="accordion-panel-content">
                         <div class="accordion-content">
-                            <p class="m-0 flex justify-content-between ">Buts : <span class="text-primary">{{ player.computed.goals }}</span>
+                            <p class="m-0 flex justify-content-between ">Buts : <span class="text-primary">{{
+                                    player.computed.goals }}</span>
                             </p>
-                            <p class="m-0 flex justify-content-between ">Total des tirs : <span class="text-primary">{{ player.computed.shots
+                            <p class="m-0 flex justify-content-between ">Total des tirs : <span class="text-primary">{{
+                                    player.computed.shots
                                     }}</span></p>
-                            <p class="m-0 flex justify-content-between ">Tirs cadrés : <span class="text-primary">{{ player.computed.shotsOn
+                            <p class="m-0 flex justify-content-between ">Tirs cadrés : <span class="text-primary">{{
+                                    player.computed.shotsOn
                                     }}</span></p>
                             <p class="m-0 flex justify-content-between ">Penalty réussi : <span class="text-primary">{{
                                     player.computed.penaltyScored }}</span></p>
@@ -163,7 +165,8 @@
                     <p-accordion-header>Passes</p-accordion-header>
                     <p-accordion-content class="accordion-panel-content">
                         <div class="accordion-content">
-                            <p class="m-0 flex justify-content-between ">Passes décisives : <span class="text-primary">{{
+                            <p class="m-0 flex justify-content-between ">Passes décisives : <span
+                                    class="text-primary">{{
                                     player.computed.assists }}</span></p>
                             <p class="m-0 flex justify-content-between ">Total passes : <span class="text-primary">{{
                                     player.computed.totalPasses }}</span></p>
@@ -177,9 +180,11 @@
                     <p-accordion-header>Défense</p-accordion-header>
                     <p-accordion-content class="accordion-panel-content">
                         <div class="accordion-content">
-                            <p class="m-0 flex justify-content-between ">Total duels : <span class="text-primary">{{ player.computed.totalDuel
+                            <p class="m-0 flex justify-content-between ">Total duels : <span class="text-primary">{{
+                                    player.computed.totalDuel
                                     }}</span></p>
-                            <p class="m-0 flex justify-content-between ">Duels gagnés : <span class="text-primary">{{ player.computed.duelWon
+                            <p class="m-0 flex justify-content-between ">Duels gagnés : <span class="text-primary">{{
+                                    player.computed.duelWon
                                     }}</span></p>
                             <p class="m-0 flex justify-content-between ">Tacles : <span class="text-primary">{{
                                     player.computed.tackles}}</span></p>
