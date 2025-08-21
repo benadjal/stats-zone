@@ -138,7 +138,7 @@ export interface Shots {
 export interface Goals {
   total: number;
   conceded: number | null;
-  assists: number | null;
+  assists: number;
   saves: number | null;
 }
 

@@ -52,4 +52,17 @@ export class LeagueApi {
     )
   }
 
+    getLeagueTopAssists(): Observable<PlayerWithStatistics[]> {
+    //Faire un cache pour chaque ligue/saison
+    return combineLatest([this.leagueSeason$$, this.leagueName$$]).pipe(
+      switchMap(([leagueSeason, leagueName]) => {
+        return this.http.get<PlayersApiResponse>(this.apiUrl + "/players/topassists", {
+          headers: this.getHeaders(),
+          params: { season: leagueSeason.year, league: leagueName.id }
+        })
+      }),
+      map((topScorers) => topScorers.response as PlayerWithStatistics[]),
+    )
+  }
+
 }

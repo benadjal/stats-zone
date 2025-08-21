@@ -5,9 +5,9 @@
 
 
 <div class="flex justify-content-center mt-5">
-    @if(topScorers$ | async; as topScorers) {
+    @if(topAssists$ | async; as topAssists) {
     <div class="card">
-        <p-table [value]="topScorers">
+        <p-table [value]="topAssists">
             <ng-template #header>
                 <tr>
                     <th></th>
@@ -16,7 +16,7 @@
                     <th>Nationalité</th>
                     <th>Club</th>
                     <th>Matchs</th>
-                    <th>Buts</th>
+                    <th>Assists</th>
                 </tr>
             </ng-template>
             <ng-template #body let-player>
@@ -28,7 +28,7 @@
                     <td>{{ player.statistics[0].team.name}}</td>
                     <td>{{ player.statistics[0].games.appearences }}</td>
                     <td>
-                        <p-badge [value]="player.statistics[0].goals.total" [severity]="goalSeverity(player)" />
+                        <p-badge [value]="player.statistics[0].goals.assists" [severity]="goalSeverity(player)" />
                     </td>
                 </tr>
             </ng-template>
