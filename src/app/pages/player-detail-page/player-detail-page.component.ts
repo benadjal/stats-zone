@@ -6,7 +6,7 @@ import { SearchBarComponent } from '../../components/search-bar/search-bar.compo
 import { CardModule } from 'primeng/card';
 import { AccordionModule } from 'primeng/accordion';
 import { RadarChartComponent } from '../../components/charts/radar-chart/radar-chart.component';
-import { FootballApiService } from '../../services/football-api.service';
+import { PlayerApiService } from '../../services/player-api.service';
 import { League, PlayerDetails, PlayerWithStatistics } from '../../models/player.model';
 
 @Component({
@@ -18,7 +18,7 @@ import { League, PlayerDetails, PlayerWithStatistics } from '../../models/player
 })
 export class PlayerDetailPageComponent {
   router = inject(ActivatedRoute);
-  footballService = inject(FootballApiService);
+  footballService = inject(PlayerApiService);
 
   player$: Observable<PlayerDetails> = this.router.params.pipe(
     tap((res) => console.log(res)),

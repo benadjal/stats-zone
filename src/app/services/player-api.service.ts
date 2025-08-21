@@ -4,7 +4,7 @@ import { catchError, forkJoin, map, Observable, of, tap } from 'rxjs';
 import {ApiPlayerData, PlayerData, PlayersApiResponse, PlayerWithStatistics, Statistic, TopPlayer } from '../models/player.model';
 
 @Injectable({ providedIn: 'root' })
-export class FootballApiService {
+export class PlayerApiService {
   private http = inject(HttpClient);
   private keyApi: string = '6299e7617bede55e9a5ee4d5f91a8cbd';
   private apiUrl = 'https://v3.football.api-sports.io';
@@ -26,7 +26,7 @@ export class FootballApiService {
       const { data, timestamp } = JSON.parse(cached);
       const now = Date.now();
 
-      if (now - timestamp < 86400000 * 3) {
+      if (now - timestamp < 86400000 * 3) { // Magic numbers
         this.topPlayersCache = data;
         return of(this.topPlayersCache)
       }

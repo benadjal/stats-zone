@@ -1,0 +1,4 @@
+<form [formGroup]="searchLeagueForm">
+    <p-select [options]="leagues" [checkmark]="true" optionLabel="name"
+        placeholder="Selctionner une ligue" formControlName="leagueName" (onChange)="selectedLeague($event.value)"/>
+</form>

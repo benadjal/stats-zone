@@ -1,0 +1,4 @@
+<form [formGroup]="seasonForm">
+    <p-select [options]="seasons" [checkmark]="true" optionLabel="year"
+        placeholder="Selctionner une saison" formControlName="year" (onChange)="selectedSeason($event.value)"/>
+</form>

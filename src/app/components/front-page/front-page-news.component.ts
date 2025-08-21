@@ -18,12 +18,12 @@ export class FrontPageComponent {
 
     {
       icon: 'stars',
-      text: 'Performences exceptionnelles',
+      text: 'Top passeurs',
     },
 
     {
       icon: 'search',
-      text: 'Nouveaux talents à suivre',
+      text: 'Talents à suivre',
     },
   ];
 }

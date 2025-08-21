@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { PlayerData } from '../../models/player.model';
-import { FootballApiService } from '../../services/football-api.service';
+import { PlayerApiService } from '../../services/player-api.service';
 import { debounceTime, distinctUntilChanged, filter, map, Observable, switchMap, tap } from 'rxjs';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 
@@ -29,7 +29,7 @@ export type SearchBarMode = 'search' | 'comparePlayerOne' | 'comparePlayerTwo'
   styleUrl: './search-bar.component.scss',
 })
 export class SearchBarComponent {
-  footballService = inject(FootballApiService);
+  footballService = inject(PlayerApiService);
 
   router = inject(Router);
 
