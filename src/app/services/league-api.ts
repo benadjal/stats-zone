@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { BehaviorSubject, combineLatest, map, Observable, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, Observable, of, switchMap, tap } from 'rxjs';
 import { LeagueInput, Season, SeasonInput } from '../models/inputs.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PlayersApiResponse, PlayerWithStatistics } from '../models/player.model';
@@ -8,10 +8,14 @@ import { PlayersApiResponse, PlayerWithStatistics } from '../models/player.model
   providedIn: 'root'
 })
 export class LeagueApi {
+
+  http = inject(HttpClient);
+
+  topScorersCache: PlayerWithStatistics[] = [];
+
   defaultSeason: SeasonInput = { year: 2023 };
   defaultLeague: LeagueInput = { id: 39, name: "Premier league" };
 
-  http = inject(HttpClient);
 
   leagueSeason$$: BehaviorSubject<SeasonInput> = new BehaviorSubject(this.defaultSeason);
   leagueName$$: BehaviorSubject<LeagueInput> = new BehaviorSubject(this.defaultLeague);
@@ -35,15 +39,16 @@ export class LeagueApi {
   }
 
 
-  getLeagueTopScorers() : Observable<PlayerWithStatistics[]> {
+  getLeagueTopScorers(): Observable<PlayerWithStatistics[]> {
+    //Faire un cache pour chaque ligue/saison
     return combineLatest([this.leagueSeason$$, this.leagueName$$]).pipe(
       switchMap(([leagueSeason, leagueName]) => {
         return this.http.get<PlayersApiResponse>(this.apiUrl + "/players/topscorers", {
-          headers : this.getHeaders(),
-          params : {season : leagueSeason.year, league : leagueName.id}
+          headers: this.getHeaders(),
+          params: { season: leagueSeason.year, league: leagueName.id }
         })
       }),
-      map((topScorers) => topScorers.response as PlayerWithStatistics[] )
+      map((topScorers) => topScorers.response as PlayerWithStatistics[]),
     )
   }
 

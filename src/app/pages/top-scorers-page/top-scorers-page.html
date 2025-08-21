@@ -1,4 +1,4 @@
-<div class="flex fle-wrap justify-content-center gap-7 mt-5"> 
+<div class="flex fle-wrap justify-content-center gap-7 mt-5">
     <app-league-search-input (leagueSelection)="leagueSelected($event)"></app-league-search-input>
     <app-season-search-input (seasonSelection)="seasonSelected($event)"></app-season-search-input>
 </div>
@@ -6,6 +6,34 @@
 
 <div class="flex justify-content-center mt-5">
     @if(topScorers$ | async; as topScorers) {
-        {{topScorers | json}}
+    <div class="card">
+        <p-table [value]="topScorers">
+            <ng-template #header>
+                <tr>
+                    <th></th>
+                    <th>Nom</th>
+                    <th>Age</th>
+                    <th>Nationalité</th>
+                    <th>Club</th>
+                    <th>Matchs</th>
+                    <th>Buts</th>
+                </tr>
+            </ng-template>
+            <ng-template #body let-player>
+                <tr>
+                    <td> <img [src]="player.player.photo" style="width: 6rem; border-radius: 50%;"> </td>
+                    <td>{{ player.player.name }}</td>
+                    <td>{{ player.player.age }}</td>
+                    <td>{{ player.player.nationality }}</td>
+                    <td>{{ player.statistics[0].team.name}}</td>
+                    <td>{{ player.statistics[0].games.appearences }}</td>
+                    <!-- <td>{{ player.statistics[0].goals.total }}</td> -->
+                    <td>
+                        <p-badge [value]="player.statistics[0].goals.total" [severity]="goalSeverity(player)" />
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
     }
 </div>

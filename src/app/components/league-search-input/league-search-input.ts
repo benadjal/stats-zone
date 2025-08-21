@@ -18,7 +18,7 @@ export class LeagueSearchInput {
     { id: 39, name: "Premier league" },
     { id: 140, name: "Liga" },
     { id: 61, name: "Ligue 1" },
-    { id: 95, name: "Primeria Liga" },
+    { id: 94, name: "Primeria Liga" },
     { id: 78, name: "Bundesliga" },
     { id: 135, name: "Serie A" },
   ];
