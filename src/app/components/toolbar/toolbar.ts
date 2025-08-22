@@ -9,6 +9,7 @@ import { ToggleSwitchModule } from 'primeng/toggleswitch';
 export interface MenuItems {
   label: string;
   icon?: string;
+  routerLink: string,
   items?: MenuItems[]
 }
 
@@ -26,11 +27,14 @@ export class Toolbar {
   items: MenuItems[] = [
     {
       label: 'Comparer des joueurs',
+      routerLink: "/"
     },
     {
       label: 'Top buteurs',
+      routerLink: "top-scorers"
     }, {
       label: 'Top passeurs',
+      routerLink: "top-assists"
     },
   ];
 

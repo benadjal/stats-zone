@@ -8,7 +8,7 @@
     </ng-template>
 
     <ng-template pTemplate="item" let-item let-root="root">
-        <a class="text-7xl">
+        <a class="text-7xl" [routerLink]="item.routerLink">
             @if(item.icon) {
             <i [class]="item.icon"></i>
             }
