@@ -20,3 +20,14 @@
   align-items: center;
   gap: 20px;
 }
+
+@media (max-width: 768px) {
+  .hide-md {
+    display: none;
+  }
+}
+@media (min-width: 769px) {
+  .hide-md {
+    display: table-cell;
+  }
+}
