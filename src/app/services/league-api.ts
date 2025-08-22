@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { BehaviorSubject, combineLatest, map, Observable, of, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, Observable, of, switchMap, tap, timestamp } from 'rxjs';
 import { LeagueInput, Season, SeasonInput } from '../models/inputs.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PlayersApiResponse, PlayerWithStatistics } from '../models/player.model';
@@ -40,28 +40,52 @@ export class LeagueApi {
 
 
   getLeagueTopScorers(): Observable<PlayerWithStatistics[]> {
-    //Faire un cache pour chaque ligue/saison
     return combineLatest([this.leagueSeason$$, this.leagueName$$]).pipe(
       switchMap(([leagueSeason, leagueName]) => {
-        return this.http.get<PlayersApiResponse>(this.apiUrl + "/players/topscorers", {
+        const key = `topScorers-${leagueName.name}-${leagueSeason.year}`;
+        const cachedTopScorers = localStorage.getItem(key);
+
+        if (cachedTopScorers) {
+          const { data, timestamp } = JSON.parse(cachedTopScorers);
+          if (Date.now() - timestamp < 86400000) {
+            return of(data);
+          }
+        }
+
+        return this.http.get<PlayersApiResponse>(`${this.apiUrl}/players/topscorers`, {
           headers: this.getHeaders(),
           params: { season: leagueSeason.year, league: leagueName.id }
-        })
-      }),
-      map((topScorers) => topScorers.response as PlayerWithStatistics[]),
-    )
+        }).pipe(
+          map(res => res.response as PlayerWithStatistics[]),
+          tap(data => localStorage.setItem(key, JSON.stringify({ data, timestamp: Date.now() })))
+        );
+      })
+    );
   }
 
-    getLeagueTopAssists(): Observable<PlayerWithStatistics[]> {
-    //Faire un cache pour chaque ligue/saison
+
+  getLeagueTopAssists(): Observable<PlayerWithStatistics[]> {
     return combineLatest([this.leagueSeason$$, this.leagueName$$]).pipe(
       switchMap(([leagueSeason, leagueName]) => {
+        const key = `topAssists-${leagueName.name}-${leagueSeason.year}`;
+
+        const cachedTopAssists = localStorage.getItem(key);
+
+        if (cachedTopAssists) {
+          const { data, timestamp } = JSON.parse(cachedTopAssists);
+          if (Date.now() - timestamp < 86400000) {
+            return of(data);
+          }
+        }
+
         return this.http.get<PlayersApiResponse>(this.apiUrl + "/players/topassists", {
           headers: this.getHeaders(),
           params: { season: leagueSeason.year, league: leagueName.id }
-        })
-      }),
-      map((topScorers) => topScorers.response as PlayerWithStatistics[]),
+        }).pipe(
+          map((topAssists) => topAssists.response as PlayerWithStatistics[]),
+          tap((data) => localStorage.setItem(key, JSON.stringify({ data, timestamp: Date.now() })))
+        );
+      })
     )
   }
 
