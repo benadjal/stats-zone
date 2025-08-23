@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { LeagueInput } from '../../models/inputs.model';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SelectModule } from 'primeng/select';
+import { LeagueApi } from '../../services/league-api';
 
 
 @Component({
@@ -12,7 +13,9 @@ import { SelectModule } from 'primeng/select';
 })
 export class LeagueSearchInput {
 
-  @Output() leagueSelection : EventEmitter<LeagueInput> = new EventEmitter()
+  @Output() leagueSelection: EventEmitter<LeagueInput> = new EventEmitter();
+
+  leagueService = inject(LeagueApi);
 
   leagues: LeagueInput[] = [
     { id: 39, name: "Premier league" },
@@ -26,11 +29,10 @@ export class LeagueSearchInput {
   filtredLeagues: LeagueInput[] = [...this.leagues];
 
   searchLeagueForm = new FormGroup({
-    leagueName: new FormControl({id: 39, name: "Premier league"}, Validators.required)
+    leagueName: new FormControl(this.leagueService.leagueName$$.getValue())
   });
-
-  selectedLeague(event: LeagueInput) : void {
+  
+  selectedLeague(event: LeagueInput): void {
     this.leagueSelection.emit(event)
   }
-
 }
