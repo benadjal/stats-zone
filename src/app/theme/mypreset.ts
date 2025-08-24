@@ -73,6 +73,21 @@ export const MyPreset = definePreset(Aura, {
             }
         },
 
+        badge: {
+            colorScheme: {
+                dark: {
+                    warn: {
+                        background: '{yellow.400}',
+                    }
+                },
+                light: {
+                    warn: {
+                        background: '{yellow.400}',
+                    }
+                }
+            }
+
+        },
         autocomplete: {
             root: {
                 invalidBorderColor: '{primary.500}',
@@ -106,7 +121,6 @@ export const MyPreset = definePreset(Aura, {
                 dark: {
                     root: {
                         background: '{surface.800}',
-
                     }
                 }
             }

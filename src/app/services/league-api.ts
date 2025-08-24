@@ -1,8 +1,9 @@
 import { inject, Injectable } from '@angular/core';
-import { BehaviorSubject, combineLatest, map, Observable, of, switchMap, tap, timestamp } from 'rxjs';
-import { LeagueInput, Season, SeasonInput } from '../models/inputs.model';
+import { BehaviorSubject, combineLatest, forkJoin, map, Observable, of, switchMap, tap, timestamp } from 'rxjs';
+import { Card, LeagueInput, Season, SeasonInput } from '../models/inputs.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PlayersApiResponse, PlayerWithStatistics } from '../models/player.model';
+import { PlayerApiService } from './player-api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +16,15 @@ export class LeagueApi {
 
   defaultSeason: SeasonInput = { year: 2023 };
   defaultLeague: LeagueInput = { id: 39, name: "Premier league" };
+  defaultCardColor: Card = "yellow"
+
+  defaultCard: Card = "yellow";
 
 
   leagueSeason$$: BehaviorSubject<SeasonInput> = new BehaviorSubject(this.defaultSeason);
   leagueName$$: BehaviorSubject<LeagueInput> = new BehaviorSubject(this.defaultLeague);
+  cardColor$$: BehaviorSubject<Card> = new BehaviorSubject(this.defaultCard);
+
 
   private keyApi: string = '6299e7617bede55e9a5ee4d5f91a8cbd';
   private apiUrl = 'https://v3.football.api-sports.io';
@@ -36,6 +42,10 @@ export class LeagueApi {
 
   selectNewSeason(value: SeasonInput) {
     this.leagueSeason$$.next(value);
+  }
+
+  selectNewCardColor(value: Card) {
+    this.cardColor$$.next(value);
   }
 
 
@@ -87,6 +97,30 @@ export class LeagueApi {
         );
       })
     )
+  }
+
+  getMostCardedPlayer(): Observable<PlayerWithStatistics[]> {
+    return combineLatest([this.leagueName$$, this.leagueSeason$$, this.cardColor$$]).pipe(
+      switchMap(([league, season, cardColor]) => {
+        const key = `top${cardColor}Cards-${league.name}-${season.year}`;
+        const cached = localStorage.getItem(key);
+
+        if (cached) {
+          const { data, timestamp } = JSON.parse(cached);
+          if (Date.now() - timestamp < 86400000 * 3) {
+            return of(data);
+          }
+        }
+
+        return this.http.get<PlayersApiResponse>(`${this.apiUrl}/players/top${cardColor}cards`, {
+          headers: this.getHeaders(),
+          params: { season: season.year, league: league.id }
+        }).pipe(
+          map(response => response.response as PlayerWithStatistics[]),
+          tap(data => localStorage.setItem(key, JSON.stringify({ data, timestamp: Date.now() })))
+        );
+      })
+    );
   }
 
 }

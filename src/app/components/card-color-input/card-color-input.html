@@ -1,0 +1,4 @@
+<form [formGroup]="cardForm">
+    <p-select [options]="cardColorsSelection" [checkmark]="true"
+        placeholder="Couleur carton" formControlName="color" (onChange)="selectedColor($event.value)"/>
+</form>

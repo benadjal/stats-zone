@@ -26,16 +26,16 @@ export class Toolbar {
 
   items: MenuItems[] = [
     {
-      label: 'Comparer des joueurs',
-      routerLink: "/"
-    },
-    {
       label: 'Top buteurs',
       routerLink: "top-scorers"
     }, {
       label: 'Top passeurs',
       routerLink: "top-assists"
     },
+      {
+      label: 'Les plus sanctionnéss',
+      routerLink: "most-carded"
+    }
   ];
 
 

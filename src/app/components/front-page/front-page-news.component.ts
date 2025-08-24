@@ -26,22 +26,8 @@ export class FrontPageComponent {
 
     {
       icon: 'search',
-      text: 'Talents à suivre',
-      routerLink : "/"
+      text: 'Les plus sanctionnés',
+      routerLink : "most-carded"
     },
   ];
 }
-
-  // items: MenuItems[] = [
-  //   {
-  //     label: 'Comparer des joueurs',
-  //     routerLink: "/"
-  //   },
-  //   {
-  //     label: 'Top buteurs',
-  //     routerLink: "top-scorers"
-  //   }, {
-  //     label: 'Top passeurs',
-  //     routerLink: "top-assists"
-  //   },
-  // ];

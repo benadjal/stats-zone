@@ -1,0 +1,46 @@
+<h2 style="text-align: center;">Joueurs les plus sanctionnés</h2>
+
+<div class="flex flex-wrap justify-content-center gap-2 md:gap-7 mt-5">
+    <app-league-search-input (leagueSelection)="leagueSelected($event)"></app-league-search-input>
+    <app-season-search-input (seasonSelection)="seasonSelected($event)"></app-season-search-input>
+    <app-card-color-input (colorCard)="cardColorSelected($event)"></app-card-color-input>
+</div>
+
+
+<div class="flex justify-content-center mt-5">
+    @if(mostCarded$ | async; as mostCarded) {
+    <div class="card">
+        <p-table [value]="mostCarded">
+            <ng-template #header>
+                <tr>
+                    <th></th>
+                    <th>Nom</th>
+                    <th class="hide-md">Age</th>
+                    <th class="hide-md">Nationalité</th>
+                    <th class="hide-md">Club</th>
+                    <th class="hide-md">Matchs</th>
+                    <th>Jaunes</th>
+                    <th>Rouges</th>
+
+                </tr>
+            </ng-template>
+            <ng-template #body let-player>
+                <tr>
+                    <td> <img [src]="player.player.photo" style="width: 4rem; border-radius: 50%;"> </td>
+                    <td>{{ player.player.name }}</td>
+                    <td class="hide-md">{{ player.player.age }}</td>
+                    <td class="hide-md">{{ player.player.nationality }}</td>
+                    <td class="hide-md">{{ player.statistics[0].team.name}}</td>
+                    <td class="hide-md">{{ player.statistics[0].games.appearences }}</td>
+                    <td>
+                        <p-badge [value]="player.statistics[0].cards.yellow" [severity]="'warn'" />
+                    </td>
+                    <td>
+                        <p-badge [value]="player.statistics[0].cards.red" [severity]="'danger'" />
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    }
+</div>
