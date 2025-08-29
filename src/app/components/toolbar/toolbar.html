@@ -1,4 +1,4 @@
-<p-menubar [model]="items" class="flex mb-3 p-0 " style="font-family: 'Inter', sans-serif; font-weight: bold;">
+<p-menubar [model]="items" class="flex mb-3" style="font-family: 'Inter', sans-serif; font-weight: bold;">
 
     <ng-template pTemplate="start">
         <div class="logo flex items-center">
@@ -8,7 +8,7 @@
     </ng-template>
 
     <ng-template pTemplate="item" let-item let-root="root">
-        <a class="text-7xl" [routerLink]="item.routerLink">
+        <a class="text-7xl" [routerLink]="item.routerLink" routerLinkActive="p-highlight">
             @if(item.icon) {
             <i [class]="item.icon"></i>
             }

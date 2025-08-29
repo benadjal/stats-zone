@@ -3,10 +3,10 @@ img {
     cursor: pointer;
 }
 
-    :host ::ng-deep .p-menubar-button .p-icon {
-        width: 1.8rem;
-        height: 1.8rem;
-    }
+:host ::ng-deep .p-menubar-button .p-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+}
 
 /* Met le hamburger à droite en mobile */
 @media (max-width: 960px) {

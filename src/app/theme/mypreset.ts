@@ -82,11 +82,10 @@ export const MyPreset = definePreset(Aura, {
                 },
                 light: {
                     warn: {
-                        background: '{yellow.400}',
+                        background: '{yellow.600}',
                     }
                 }
             }
-
         },
         autocomplete: {
             root: {
@@ -120,7 +119,7 @@ export const MyPreset = definePreset(Aura, {
                 },
                 dark: {
                     root: {
-                        background: '{surface.800}',
+                        background: '{surface.900}',
                     }
                 }
             }
@@ -145,23 +144,21 @@ export const MyPreset = definePreset(Aura, {
                 size: '3rem',
                 color: '{primary.600}',
             },
-            baseItem: {
-                padding: '1rem  1rem'
-            },
+
             colorScheme: {
                 dark: {
-                    root: {
-                        gap: '20px',
-                        background: '{surface.850}',
-                        borderColor: '{surface.850}'
-                    },
-                },
-                light: {
-                    root: {
-                        borderColor: '{surface.0}',
+                    item: {
+                        activeBackground: '{primary.950}',
                     }
                 }
+            },
+            baseItem: {
+                padding: '1rem',
+            },
+            root: {
+                padding: '0.5rem 2rem'
             },
         }
     }
 });
+
