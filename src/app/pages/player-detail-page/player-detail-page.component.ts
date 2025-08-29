@@ -21,20 +21,15 @@ export class PlayerDetailPageComponent {
   footballService = inject(PlayerApiService);
 
   player$: Observable<PlayerDetails> = this.router.params.pipe(
-    tap((res) => console.log(res)),
     switchMap((params) => this.footballService.getPlayerProfil(+params['id'])),
-    tap((res) => console.log(res)),
     map((player: PlayerWithStatistics) => {
 
       const nationalTeamStats = player.statistics.filter((stats) => (stats.team.name ?? '') === player.player.nationality);
 
       const clubStats = player.statistics.filter((stats) => !(stats.team.name ?? '').includes(player.player.nationality));
 
-      console.log(clubStats)
-
       const leagueData : League = clubStats[0].league
-      
-
+    
       const goalsWithNationalTeam = nationalTeamStats.reduce((acc, current) => acc + current.goals.total, 0);
       const assistsWithNationalTeam = nationalTeamStats.reduce((acc, current) => acc + (current.goals.assists ?? 0), 0);
 

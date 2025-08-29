@@ -42,7 +42,6 @@ export class SearchBarComponent {
   });
 
   filtredPlayers$: Observable<any> = this.searchForm.controls.search.valueChanges.pipe(
-    tap((res) => console.log(res)),
     debounceTime(400),
     distinctUntilChanged(),
     filter((search) => typeof search === 'string'),

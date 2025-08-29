@@ -46,7 +46,6 @@ export class PlayerApiService {
         responses.map((player: PlayersApiResponse) => player.response[0] as PlayerWithStatistics)
       ),
       map((topPlayers: PlayerWithStatistics[]) => topPlayers.map((player: PlayerWithStatistics) => {
-        console.log(player);
         return {
           playerData: player.player,
           goals: player.statistics.reduce((acc: number, current: Statistic) => {
@@ -61,7 +60,6 @@ export class PlayerApiService {
         }
       })),
       tap((players: TopPlayer[]) => {
-        console.log(players)
         this.topPlayersCache = players;
         localStorage.setItem(
           'topPlayers',
@@ -69,7 +67,6 @@ export class PlayerApiService {
         );
       }),
       catchError((err) => {
-        console.log(err);
         return of([]);
       })
 
@@ -77,8 +74,6 @@ export class PlayerApiService {
   }
 
   getPlayerProfil(playerId: number) {
-    console.log(playerId)
-
     const key = `player_${playerId}`;
     const cached = localStorage.getItem(key);
 
@@ -93,7 +88,6 @@ export class PlayerApiService {
       params: { id: playerId, season : 2023 },
       headers: this.getHeaders()
     }).pipe(
-      tap((res) => console.log(res)),
       map((playerResponse: PlayersApiResponse) => playerResponse.response[0] as PlayerWithStatistics),
       tap((data) =>
         localStorage.setItem(
@@ -112,7 +106,6 @@ export class PlayerApiService {
       map((playerResponse : PlayersApiResponse) => playerResponse.response as ApiPlayerData[]),
       map((players : ApiPlayerData[] ) => players.map((player) => player.player)),
       map((player : PlayerData[]) => player.filter((player) => player.age || player.firstname || player.lastname || player.nationality)),
-      // tap((res) => console.log(res))
     )
   }
 }
