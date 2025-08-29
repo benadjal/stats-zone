@@ -33,7 +33,7 @@ export class Toolbar {
       routerLink: "top-assists"
     },
       {
-      label: 'Les plus sanctionnéss',
+      label: 'Les plus sanctionnés',
       routerLink: "most-carded"
     }
   ];

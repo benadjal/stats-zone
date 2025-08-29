@@ -6,26 +6,26 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-front-page',
   standalone: true,
-  imports: [CardModule,RouterModule],
+  imports: [CardModule, RouterModule],
   templateUrl: './front-page-news.component.html',
   styleUrl: './front-page-news.component.scss',
 })
 export class FrontPageComponent {
   newsFront: NewsFrontPage[] = [
     {
-      icon: 'arrow_outward',
+      icon: 'pi pi-arrow-up-right',
       text: 'Meilleurs buteurs',
       routerLink : "top-scorers"
     },
 
     {
-      icon: 'stars',
+      icon: 'pi pi-star',
       text: 'Top passeurs',
       routerLink : "top-assists"
     },
 
     {
-      icon: 'search',
+      icon: 'pi pi-exclamation-circle',
       text: 'Les plus sanctionnés',
       routerLink : "most-carded"
     },

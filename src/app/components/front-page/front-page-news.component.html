@@ -4,7 +4,8 @@
   @for (news of newsFront; track $index) {
   <p-card class="card-border news-block" [routerLink]="news.routerLink">
     <div class="card-content">
-    <i class="material-icons">{{ news.icon }}</i>
+    <!-- <i class="material-icons">{{ news.icon }}</i> -->
+    <i [class]="news.icon" style="font-size: 2rem"></i>
     <span> {{ news.text }}</span>
     </div>
   </p-card>

@@ -150,6 +150,11 @@ export const MyPreset = definePreset(Aura, {
                     item: {
                         activeBackground: '{primary.950}',
                     }
+                },
+                light: {
+                    item: {
+                        activeBackground: '{primary.100}',
+                    }
                 }
             },
             baseItem: {
