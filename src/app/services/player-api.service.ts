@@ -1,20 +1,21 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { catchError, forkJoin, map, Observable, of, tap } from 'rxjs';
-import {ApiPlayerData, PlayerData, PlayersApiResponse, PlayerWithStatistics, Statistic, TopPlayer } from '../models/player.model';
+import { ApiPlayerData, PlayerData, PlayersApiResponse, PlayerWithStatistics, Statistic, TopPlayer } from '../models/player.model';
+import { environment } from "../../environments/environment";
 
 @Injectable({ providedIn: 'root' })
 export class PlayerApiService {
   private http = inject(HttpClient);
-  private keyApi: string = '6299e7617bede55e9a5ee4d5f91a8cbd';
-  private apiUrl = 'https://v3.football.api-sports.io';
 
   private topPlayersCache!: TopPlayer[];
 
+  apiUrl : string = environment.apiUrl
+
   private getHeaders(): HttpHeaders {
     return new HttpHeaders({
-      'x-rapidapi-key': this.keyApi,
-      'x-rapidapi-host': 'v3.football.api-sports.io'
+      'x-rapidapi-key': environment.keyApi,
+      'x-rapidapi-host': this.apiUrl
     });
   }
 
@@ -85,7 +86,7 @@ export class PlayerApiService {
     }
 
     return this.http.get<PlayersApiResponse>(`${this.apiUrl}/players/`, {
-      params: { id: playerId, season : 2023 },
+      params: { id: playerId, season: 2023 },
       headers: this.getHeaders()
     }).pipe(
       map((playerResponse: PlayersApiResponse) => playerResponse.response[0] as PlayerWithStatistics),
@@ -98,14 +99,14 @@ export class PlayerApiService {
     );
   }
 
-  searchPlayer(search : string) : Observable<PlayerData[]> {
-    return this.http.get<PlayersApiResponse>(`${this.apiUrl}/players/profiles`,{
-      params : {search : search},
-      headers : this.getHeaders()
+  searchPlayer(search: string): Observable<PlayerData[]> {
+    return this.http.get<PlayersApiResponse>(`${this.apiUrl}/players/profiles`, {
+      params: { search: search },
+      headers: this.getHeaders()
     }).pipe(
-      map((playerResponse : PlayersApiResponse) => playerResponse.response as ApiPlayerData[]),
-      map((players : ApiPlayerData[] ) => players.map((player) => player.player)),
-      map((player : PlayerData[]) => player.filter((player) => player.age || player.firstname || player.lastname || player.nationality)),
+      map((playerResponse: PlayersApiResponse) => playerResponse.response as ApiPlayerData[]),
+      map((players: ApiPlayerData[]) => players.map((player) => player.player)),
+      map((player: PlayerData[]) => player.filter((player) => player.age || player.firstname || player.lastname || player.nationality)),
     )
   }
 }

@@ -3,7 +3,7 @@ import { BehaviorSubject, combineLatest, forkJoin, map, Observable, of, switchMa
 import { Card, LeagueInput, Season, SeasonInput } from '../models/inputs.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PlayersApiResponse, PlayerWithStatistics } from '../models/player.model';
-import { PlayerApiService } from './player-api.service';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -25,14 +25,13 @@ export class LeagueApi {
   leagueName$$: BehaviorSubject<LeagueInput> = new BehaviorSubject(this.defaultLeague);
   cardColor$$: BehaviorSubject<Card> = new BehaviorSubject(this.defaultCard);
 
-
-  private keyApi: string = '6299e7617bede55e9a5ee4d5f91a8cbd';
-  private apiUrl = 'https://v3.football.api-sports.io';
+  
+  apiUrl : string = environment.apiUrl
 
   private getHeaders(): HttpHeaders {
     return new HttpHeaders({
-      'x-rapidapi-key': this.keyApi,
-      'x-rapidapi-host': 'v3.football.api-sports.io'
+      'x-rapidapi-key': environment.keyApi,
+      'x-rapidapi-host': this.apiUrl
     });
   }
 
