@@ -8,11 +8,14 @@ img {
     height: 1.8rem;
 }
 
-/* Met le hamburger à droite en mobile */
 @media (max-width: 960px) {
 
     :host ::ng-deep .p-menubar-button {
         order: 2;
+    }
+
+    .toggle-mode-btn {
+        display: none;
     }
 
 }
