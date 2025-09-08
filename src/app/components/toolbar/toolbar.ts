@@ -45,12 +45,10 @@ export class Toolbar {
       {
         label: 'Changer de thème',
         command: () => this.toggleDarkMode(),
-        visible: window.innerWidth <= 960   // init
+        visible: window.innerWidth <= 960
       }
     ];
   }
-
-
 
   toggleDarkMode() {
     const element = document.querySelector('html');
