@@ -85,6 +85,7 @@
             </p-card>
         </div>
 
+        @if (player.computed.nationalTeamStats.length > 0) {
         <div class="flex-grow-1">
             <p-card class="flex flex-column justify-content-center align-items-center h-full gap-3">
                 <ng-content #body>
@@ -117,6 +118,7 @@
 
             </p-card>
         </div>
+        }
     </div>
 
     <div class="md:px-8 mb-2" style="font-family: 'Orbitron';">
