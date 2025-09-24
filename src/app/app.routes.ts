@@ -10,5 +10,5 @@ export const routes: Routes = [
   { path: 'player-detail/:id', component: PlayerDetailPageComponent },
   { path: 'top-scorers', component: TopScorersPage },
   { path: 'top-assists', component: TopAssistsPage },
-  {path : 'most-carded', component : MostCarderPlayer}
+  { path: 'most-carded', component: MostCarderPlayer }
 ];

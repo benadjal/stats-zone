@@ -17,4 +17,5 @@ export class TopPlayerListComponent {
 
   topPlayers$: Observable<TopPlayer[]> = this.foorballService.getTopPlayers();
 
+
 }

@@ -3,6 +3,8 @@ import { inject, Injectable } from '@angular/core';
 import { catchError, forkJoin, map, Observable, of, tap } from 'rxjs';
 import { ApiPlayerData, PlayerData, PlayersApiResponse, PlayerWithStatistics, Statistic, TopPlayer } from '../models/player.model';
 import { environment } from "../../environments/environment";
+import { CACHE_DURATION_MS, SEASON_2023 } from '../utils/constants/cache.constants';
+import { TopPlayerId } from '../utils/constants/players.constants';
 
 @Injectable({ providedIn: 'root' })
 export class PlayerApiService {
@@ -27,17 +29,17 @@ export class PlayerApiService {
       const { data, timestamp } = JSON.parse(cached);
       const now = Date.now();
 
-      if (now - timestamp < 86400000 * 3) { // Magic numbers
+      if (now - timestamp < CACHE_DURATION_MS) { 
         this.topPlayersCache = data;
         return of(this.topPlayersCache)
       }
     }
 
-    const topPlayersId: number[] = [1100, 521, 278, 154, 874]; // Modifier en plus propre car magic numbers
+    const topPlayersId: number[] = [TopPlayerId.Haaland, TopPlayerId.Lewandowski, TopPlayerId.Mbappe, TopPlayerId.Messi, TopPlayerId.CRonaldo];
 
     const requests: Observable<PlayersApiResponse>[] = topPlayersId.map((id) =>
       this.http.get<PlayersApiResponse>(`${this.apiUrl}/players/`, {
-        params: { id, season: 2023 },
+        params: { id, season: SEASON_2023 },
         headers: this.getHeaders()
       })
     );
@@ -55,11 +57,9 @@ export class PlayerApiService {
           assists: player.statistics.reduce((acc: number, current: Statistic) => {
             return acc + (current.goals?.assists ?? 0);
           }, 0),
-          // rating: player.statistics.reduce((acc:number,current Statistic,) => {
-
-          // })
         }
       })),
+
       tap((players: TopPlayer[]) => {
         this.topPlayersCache = players;
         localStorage.setItem(
@@ -80,13 +80,13 @@ export class PlayerApiService {
 
     if (cached) {
       const { data, timestamp } = JSON.parse(cached);
-      if (Date.now() - timestamp < 86400000) {
+      if (Date.now() - timestamp < CACHE_DURATION_MS) {
         return of(data);
       }
     }
 
     return this.http.get<PlayersApiResponse>(`${this.apiUrl}/players/`, {
-      params: { id: playerId, season: 2023 },
+      params: { id: playerId, season: SEASON_2023 },
       headers: this.getHeaders()
     }).pipe(
       map((playerResponse: PlayersApiResponse) => playerResponse.response[0] as PlayerWithStatistics),
