@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { MenuItem } from 'primeng/api';
@@ -19,6 +19,7 @@ export interface MenuItems {
   imports: [Menubar,
     ToggleSwitchModule, FormsModule, ButtonModule, RouterModule],
   templateUrl: './toolbar.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './toolbar.scss'
 })
 

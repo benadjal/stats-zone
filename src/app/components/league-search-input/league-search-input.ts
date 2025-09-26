@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, inject, Output } from '@angular/core';
 import { LeagueInput } from '../../models/inputs.model';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SelectModule } from 'primeng/select';
@@ -8,6 +8,7 @@ import { LeagueApi } from '../../services/league-api';
 @Component({
   selector: 'app-league-search-input',
   imports: [ReactiveFormsModule, SelectModule],
+  changeDetection : ChangeDetectionStrategy.OnPush,
   templateUrl: './league-search-input.html',
   styleUrl: './league-search-input.scss'
 })

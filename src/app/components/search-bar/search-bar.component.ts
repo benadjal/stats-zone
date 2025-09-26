@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -26,6 +26,7 @@ export type SearchBarMode = 'search' | 'comparePlayerOne' | 'comparePlayerTwo'
   selector: 'app-search-bar',
   imports: [ReactiveFormsModule, AsyncPipe,InputTextModule,FloatLabelModule,AutoCompleteModule],
   templateUrl: './search-bar.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './search-bar.component.scss',
 })
 export class SearchBarComponent {

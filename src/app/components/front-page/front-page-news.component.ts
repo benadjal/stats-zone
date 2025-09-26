@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NewsFrontPage } from '../../models/front-page-news.model';
 import { CardModule } from 'primeng/card';
 import { RouterModule } from '@angular/router';
@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CardModule, RouterModule],
   templateUrl: './front-page-news.component.html',
+  changeDetection : ChangeDetectionStrategy.OnPush,
   styleUrl: './front-page-news.component.scss',
 })
 export class FrontPageComponent {

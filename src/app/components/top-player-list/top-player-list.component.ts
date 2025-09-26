@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TopPlayer } from '../../models/player.model';
 import { AsyncPipe } from '@angular/common';
@@ -10,6 +10,7 @@ import { PlayerApiService } from '../../services/player-api.service';
   standalone: true,
   imports: [AsyncPipe, PlayerCardComponent],
   templateUrl: './top-player-list.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './top-player-list.component.scss',
 })
 export class TopPlayerListComponent {
